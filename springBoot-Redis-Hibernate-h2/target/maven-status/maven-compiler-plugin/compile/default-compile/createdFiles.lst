@@ -1,0 +1,11 @@
+cn\baron\spring\springbucks\model\Coffee$CoffeeBuilder.class
+cn\baron\spring\springbucks\service\CoffeeOrderService.class
+cn\baron\spring\springbucks\model\Coffee.class
+cn\baron\spring\springbucks\model\CoffeeOrder$CoffeeOrderBuilder.class
+cn\baron\spring\springbucks\service\CoffeeService.class
+cn\baron\spring\springbucks\repository\CoffeeRepository.class
+cn\baron\spring\springbucks\model\CoffeeOrder.class
+cn\baron\spring\springbucks\model\BaseEntity.class
+cn\baron\spring\springbucks\repository\CoffeeOrderRepository.class
+cn\baron\spring\springbucks\SpringBucksApplication.class
+cn\baron\spring\springbucks\model\OrderState.class
