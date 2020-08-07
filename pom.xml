@@ -19,7 +19,7 @@
         <module>springBootMongoDB</module>
         <module>springBootMongoDBRepository</module>
         <module>springBoot-Redis-Hibernate-h2</module>
-        <module>springBoot-Mybatis-Durid-MySQL</module>
+        <module>springBoot-MyBatis-Druid-MySQL</module>
         <module>springboot-multi-datasource-h2</module>
         <module>springboot-api</module>
     </modules>

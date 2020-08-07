@@ -2,32 +2,25 @@ package cn.baron.springbootMongoDBRepository;
 
 
 
+import cn.baron.springbootMongoDBRepository.converter.MoneyReadConverter;
+import cn.baron.springbootMongoDBRepository.mode.Coffee;
 import cn.baron.springbootMongoDBRepository.repository.CoffeeRepository;
-import com.mongodb.client.result.UpdateResult;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
-import cn.baron.springbootMongoDBRepository.converter.MoneyReadConverter;
-import cn.baron.springbootMongoDBRepository.mode.Coffee;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @Slf4j
 public class SpringbootMongoDbApplication implements CommandLineRunner {
 

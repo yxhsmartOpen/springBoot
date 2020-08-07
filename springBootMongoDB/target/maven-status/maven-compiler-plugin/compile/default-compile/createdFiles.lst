@@ -1,5 +1,5 @@
-cn\baron\springbootMongoDB\mode\Coffee$CoffeeBuilder.class
-cn\baron\springbootMongoDB\converter\MoneyReadConverter.class
-cn\baron\springbootMongoDB\mode\Coffee.class
-cn\baron\springbootMongoDB\SpringbootMongoDbApplication.class
-cn\baron\springbootMongoDB\repository\CoffeeRepository.class
+cn\baron\springboot\mongo\mode\Coffee.class
+cn\baron\springboot\mongo\converter\MoneyReadConverter.class
+cn\baron\springboot\mongo\repository\CoffeeRepository.class
+cn\baron\springboot\mongo\mode\Coffee$CoffeeBuilder.class
+cn\baron\springboot\mongo\SpringbootMongoDbApplication.class

@@ -1,0 +1,45 @@
+server:
+  port: 8082
+
+### spring配置
+spring:
+  datasource:
+    ##### JDBC 配置 #######
+    url: jdbc:mysql://ip:3306/timo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+
+    # Druid 连接池自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+    druid:
+      filters: stat,wall,log4j2  # 过滤器设置（第一个stat很重要，没有的话会监控不到SQL）
+      min-idle: 4 # 池中维护的最小空闲连接数，默认为 0 个。
+      max-active: 20 # 池中最大连接数，包括闲置和使用中的连接，默认为 8 个。
+      initial-size: 2
+      max-wait: 100
+      filter:
+        stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+          log-slow-sql: true # 开启慢查询记录
+          slow-sql-millis: 5000 # 慢 SQL 的标准，单位：毫秒
+          enabled: true
+      stat-view-servlet: # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+        enabled: true # 是否开启 StatViewServlet
+        login-username: baron # 账号
+        login-password: baron # 密码
+        url-pattern: /druid/* #内置监控页面的地址
+        reset-enable: false #关闭 Reset All 功能
+        allow: 127.0.0.1 #白名单（如果allow没有配置或者为空，则允许所有访问）
+        deny: 192.168.10.11 #黑名单（deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝）
+      web-stat-filter: ##### WebStatFilter 配置 #######
+        enabled: true #是否启用 WebStatFilter
+        url-pattern: /* #添加过滤规则
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"  #排除一些不必要的url
+        session-stat-enable: true #开启session统计功能
+        session-stat-max-count: 1000 #缺省sessionStatMaxCount是1000个
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # mapper文件所在文件夹
+  type-aliases-package: com.baron.vo # 别名类(实体类)所在包
+  configuration.map-underscore-to-camel-case: true # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId

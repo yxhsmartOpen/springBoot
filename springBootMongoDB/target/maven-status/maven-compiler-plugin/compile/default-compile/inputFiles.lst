@@ -1,4 +1,4 @@
-D:\MAVEN\springBootDemo\springBootMongoDB\src\main\java\cn\baron\springbootMongoDB\repository\CoffeeRepository.java
-D:\MAVEN\springBootDemo\springBootMongoDB\src\main\java\cn\baron\springbootMongoDB\SpringbootMongoDbApplication.java
-D:\MAVEN\springBootDemo\springBootMongoDB\src\main\java\cn\baron\springbootMongoDB\converter\MoneyReadConverter.java
-D:\MAVEN\springBootDemo\springBootMongoDB\src\main\java\cn\baron\springbootMongoDB\mode\Coffee.java
+D:\MAVEN\springBoot-family\springBootMongoDB\src\main\java\cn\baron\springboot\mongo\converter\MoneyReadConverter.java
+D:\MAVEN\springBoot-family\springBootMongoDB\src\main\java\cn\baron\springboot\mongo\mode\Coffee.java
+D:\MAVEN\springBoot-family\springBootMongoDB\src\main\java\cn\baron\springboot\mongo\repository\CoffeeRepository.java
+D:\MAVEN\springBoot-family\springBootMongoDB\src\main\java\cn\baron\springboot\mongo\SpringbootMongoDbApplication.java
