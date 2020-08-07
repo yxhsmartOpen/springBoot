@@ -21,6 +21,7 @@
         <module>springBoot-Redis-Hibernate-h2</module>
         <module>springBoot-Mybatis-Durid-MySQL</module>
         <module>springboot-multi-datasource-h2</module>
+        <module>springboot-api</module>
     </modules>
 
     <properties>

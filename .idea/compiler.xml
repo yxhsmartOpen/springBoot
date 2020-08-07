@@ -8,10 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springBoot-Redis-Hibernate-h2" />
-        <module name="springBootMongoDBRepository" />
-        <module name="springBoot-Mybatis-Durid-MySQL" />
         <module name="springboot-multi-datasource-h2" />
+        <module name="springBootMongoDBRepository" />
+        <module name="springboot-api" />
         <module name="springBootMongoDB" />
+        <module name="springBoot-Mybatis-Durid-MySQL" />
       </profile>
     </annotationProcessing>
   </component>
@@ -21,6 +22,7 @@
       <module name="springBoot-Redis-Hibernate-h2" options="-parameters" />
       <module name="springBootMongoDB" options="-parameters" />
       <module name="springBootMongoDBRepository" options="-parameters" />
+      <module name="springboot-api" options="-parameters" />
       <module name="springboot-multi-datasource-h2" options="-parameters" />
     </option>
   </component>
