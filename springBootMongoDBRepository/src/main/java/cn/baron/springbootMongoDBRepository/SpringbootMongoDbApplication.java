@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
-
 import java.util.Arrays;
 import java.util.Date;
 
@@ -52,15 +51,13 @@ public class SpringbootMongoDbApplication implements CommandLineRunner {
 				.updateTime(new Date()).build();
 
 		coffeeRepository.insert(Arrays.asList(espresso,latte));
-		coffeeRepository.findAll(Sort.by("name"))
-				.forEach(c -> log.info("save Coffee {}",c));
+		coffeeRepository.findAll(Sort.by("name")).forEach(c -> log.info("save Coffee {}",c));
 
 		Thread.sleep(5000);
 		latte.setPrice(Money.of(CurrencyUnit.of("CNY"),25.0));
 		latte.setUpdateTime(new Date());
 		coffeeRepository.save(latte);
-		coffeeRepository.findByName("latte")
-				.forEach(c -> log.info("Coffee {}", c));
+		coffeeRepository.findByName("latte").forEach(c -> log.info("Coffee {}", c));
 
 		coffeeRepository.deleteAll();
 	}

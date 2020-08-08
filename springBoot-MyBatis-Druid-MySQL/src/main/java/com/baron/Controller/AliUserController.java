@@ -1,11 +1,13 @@
 package com.baron.Controller;
 
 
+import com.alibaba.druid.stat.DruidStatManagerFacade;
 import com.baron.service.AliOrderServiceImpl;
 import com.baron.service.AliUserServiceImpl;
 import com.baron.vo.AliOrder;
 import com.baron.vo.AliUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,5 +38,13 @@ public class AliUserController {
     @RequestMapping("/addOrder")
     public Integer addOrder(AliOrder aliOrder){
         return aliOrderService.insertOrder(aliOrder);
+    }
+
+    @ResponseBody
+    @GetMapping("/druid-stat")
+    public Object getDruidStatData(){
+        // DruidStatManagerFacade#getDataSourceStatDataList 该方法可以获取所有数据源的监控数据
+        // 除此之外 DruidStatManagerFacade 还提供了一些其他方法，我们可以按需选择使用。
+        return DruidStatManagerFacade.getInstance().getDataSourceStatDataList();
     }
 }
