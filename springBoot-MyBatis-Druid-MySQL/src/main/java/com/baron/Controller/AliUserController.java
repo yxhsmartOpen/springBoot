@@ -2,8 +2,8 @@ package com.baron.Controller;
 
 
 import com.alibaba.druid.stat.DruidStatManagerFacade;
-import com.baron.service.AliOrderServiceImpl;
-import com.baron.service.AliUserServiceImpl;
+import com.baron.service.AliOrderService;
+import com.baron.service.AliUserService;
 import com.baron.vo.AliOrder;
 import com.baron.vo.AliUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +23,10 @@ import java.util.List;
 public class AliUserController {
 
     @Autowired
-    private AliUserServiceImpl aliUserService;
+    private AliUserService aliUserService;
 
     @Autowired
-    private AliOrderServiceImpl aliOrderService;
+    private AliOrderService aliOrderService;
 
     @ResponseBody
     @RequestMapping("/selectAll")

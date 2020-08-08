@@ -1,15 +1,27 @@
 package com.baron.service;
 
 
-import com.baron.vo.AliUser;
 
+import com.baron.dao.Dao;
+import com.baron.vo.AliUser;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
  * @author Baron
- * @date 2020/7/24 17:20
+ * @date 2020/7/24 9:52
  */
-public interface AliUserServiceImpl {
+@Service
+public class AliUserServiceImpl implements AliUserService {
 
-     List<AliUser> selectUsers();
+    @Resource
+    private Dao dao;
+
+    @Override
+    public List<AliUser> selectUsers() {
+        return dao.selectUsers();
+    }
+
 }
