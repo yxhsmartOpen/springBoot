@@ -1,4 +1,4 @@
-package cn.baron.springbootMongoDBRepository.converter;
+package cn.baron.springboot.mongo.repository.converter;
 
 import org.bson.Document;
 import org.joda.money.CurrencyUnit;

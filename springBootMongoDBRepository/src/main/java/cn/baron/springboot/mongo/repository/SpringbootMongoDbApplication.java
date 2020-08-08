@@ -1,10 +1,10 @@
-package cn.baron.springbootMongoDBRepository;
+package cn.baron.springboot.mongo.repository;
 
 
 
-import cn.baron.springbootMongoDBRepository.converter.MoneyReadConverter;
-import cn.baron.springbootMongoDBRepository.mode.Coffee;
-import cn.baron.springbootMongoDBRepository.repository.CoffeeRepository;
+import cn.baron.springboot.mongo.repository.converter.MoneyReadConverter;
+import cn.baron.springboot.mongo.repository.mode.Coffee;
+import cn.baron.springboot.mongo.repository.repository.CoffeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;

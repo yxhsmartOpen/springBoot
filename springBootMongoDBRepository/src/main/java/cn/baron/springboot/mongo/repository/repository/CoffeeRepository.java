@@ -1,9 +1,9 @@
-package cn.baron.springbootMongoDBRepository.repository;
+package cn.baron.springboot.mongo.repository.repository;
 
 
 
+import cn.baron.springboot.mongo.repository.mode.Coffee;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import cn.baron.springbootMongoDBRepository.mode.Coffee;
 
 import java.util.List;
 

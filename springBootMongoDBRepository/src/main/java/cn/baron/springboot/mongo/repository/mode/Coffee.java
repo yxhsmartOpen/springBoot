@@ -1,4 +1,4 @@
-package cn.baron.springbootMongoDBRepository.mode;
+package cn.baron.springboot.mongo.repository.mode;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
