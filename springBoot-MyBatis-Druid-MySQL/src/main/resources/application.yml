@@ -5,9 +5,9 @@ server:
 spring:
   datasource:
     ##### JDBC 配置 #######
-    url: jdbc:mysql://ip:3306/timo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://134.52.22.121:3306/timo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: root
-    password:
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
 
@@ -21,7 +21,7 @@ spring:
       filter:
         stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
           log-slow-sql: true # 开启慢查询记录
-          slow-sql-millis: 5000 # 慢 SQL 的标准，单位：毫秒
+          slow-sql-millis: 30 # 慢 SQL 的标准，单位：毫秒
           enabled: true
       stat-view-servlet: # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
         enabled: true # 是否开启 StatViewServlet
@@ -37,6 +37,7 @@ spring:
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"  #排除一些不必要的url
         session-stat-enable: true #开启session统计功能
         session-stat-max-count: 1000 #缺省sessionStatMaxCount是1000个
+      aop-patterns: com.baron.dao.Dao.* # Spring 监控配置（配置多个AOP切入点使用英文 逗号分隔）
 
 # mybatis 配置
 mybatis:
