@@ -11,5 +11,9 @@ import java.util.List;
  */
 public interface AliUserService {
 
-     List<AliUser> selectUsers();
+     List<AliUser> selectPageUsers(int pageNum,int pageSize);
+
+     List<AliUser> selectUserByName(String userName);
+
+     List<AliUser> selectUserById(String userId);
 }

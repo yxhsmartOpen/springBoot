@@ -16,7 +16,7 @@ import java.io.IOException;
 
 
 /**
- * 除去页面底部的广告
+ * 除去Durid监控页面底部的广告
  *
  * @author Baron
  * @date 2020/8/8 10:38
@@ -42,7 +42,7 @@ public class RemoveDruidAdConfig {
         String commonJsPattern = pattern.replaceAll("\\*","js/common.js");
         final String filePath = "support/http/resources/js/common.js";
 
-        //创建filter进行过滤
+        // 创建filter进行过滤
         Filter filter = new Filter() {
             @Override
             public void init(FilterConfig filterConfig) throws ServletException {

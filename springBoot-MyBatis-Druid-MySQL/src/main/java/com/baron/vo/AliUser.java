@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 用户实体类
@@ -25,5 +26,7 @@ public class AliUser implements Serializable {
     private Integer age;
     private Integer sex;
     private String address;
+    private Date createTime;
+    private Date updateTime;
 
 }

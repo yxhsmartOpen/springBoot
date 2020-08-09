@@ -10,7 +10,7 @@ import java.util.Map;
  * @since 2020/08/07
  *
  */
-public enum Device {
+public enum DeviceEnum {
 
 	/** UNKNOWN */
 	UNKNOWN("0", "未知"),
@@ -27,9 +27,9 @@ public enum Device {
 	/** 类型描述 */
 	private String message;
 
-	private static Map<String, Device> map;
+	private static Map<String, DeviceEnum> map;
 
-	private Device(String type, String message) {
+	private DeviceEnum(String type, String message) {
 		this.type = type;
 		this.message = message;
 		initMap(type, this);
@@ -48,17 +48,17 @@ public enum Device {
 		return message;
 	}
 
-	public static Device getLoginEnum(Integer code) {return Device.map.get(code.toString());}
+	public static DeviceEnum getLoginEnum(Integer code) {return DeviceEnum.map.get(code.toString());}
 
-	private void initMap(String type, Device elemEnum) {
-		if (Device.map == null) {
-			Device.map = new LinkedHashMap<String, Device>();
+	private void initMap(String type, DeviceEnum elemEnum) {
+		if (DeviceEnum.map == null) {
+			DeviceEnum.map = new LinkedHashMap<String, DeviceEnum>();
 		}
 
-		Device.map.put(type, elemEnum);
+		DeviceEnum.map.put(type, elemEnum);
 	}
 
-	public static Map<String, Device> getLoginEnum() {
+	public static Map<String, DeviceEnum> getLoginEnum() {
 		return map;
 	}
 

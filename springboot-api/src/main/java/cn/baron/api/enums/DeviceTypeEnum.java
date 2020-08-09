@@ -10,7 +10,7 @@ import java.util.Map;
  * @since 2020/08/07
  *
  */
-public enum DeviceType {
+public enum DeviceTypeEnum {
 	/** 未知 */
 	UNKNOWN("0", "未知"),
 	/** 手机，android */
@@ -30,9 +30,9 @@ public enum DeviceType {
 	/** 类型描述 */
 	private String message;
 
-	private static Map<String, DeviceType> map;
+	private static Map<String, DeviceTypeEnum> map;
 
-	private DeviceType(String type, String message) {
+	private DeviceTypeEnum(String type, String message) {
 		this.type = type;
 		this.message = message;
 		initMap(type, this);
@@ -51,18 +51,18 @@ public enum DeviceType {
 		return message;
 	}
 
-	public static DeviceType getDeviceType(String type) {
-		return DeviceType.map.get(type);
+	public static DeviceTypeEnum getDeviceType(String type) {
+		return DeviceTypeEnum.map.get(type);
 	}
 
-	private void initMap(String type, DeviceType elemEnum) {
-		if (DeviceType.map == null) {
-			DeviceType.map = new LinkedHashMap<String, DeviceType>();
+	private void initMap(String type, DeviceTypeEnum elemEnum) {
+		if (DeviceTypeEnum.map == null) {
+			DeviceTypeEnum.map = new LinkedHashMap<String, DeviceTypeEnum>();
 		}
-		DeviceType.map.put(type, elemEnum);
+		DeviceTypeEnum.map.put(type, elemEnum);
 	}
 
-	public static Map<String, DeviceType> getDeviceTypeMap() {
+	public static Map<String, DeviceTypeEnum> getDeviceTypeMap() {
 		return map;
 	}
 

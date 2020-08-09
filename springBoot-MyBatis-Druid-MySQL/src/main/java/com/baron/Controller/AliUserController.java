@@ -7,10 +7,7 @@ import com.baron.service.AliUserService;
 import com.baron.vo.AliOrder;
 import com.baron.vo.AliUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,8 +27,9 @@ public class AliUserController {
 
     @ResponseBody
     @RequestMapping("/selectAll")
-    public List<AliUser> lists(){
-        return aliUserService.selectUsers();
+    public List<AliUser> lists(@RequestParam int pageNum,@RequestParam int pageSize){
+        // 查询分页用户
+        return aliUserService.selectPageUsers(pageNum,pageSize);
     }
 
     @ResponseBody
@@ -39,6 +37,14 @@ public class AliUserController {
     public Integer addOrder(AliOrder aliOrder){
         return aliOrderService.insertOrder(aliOrder);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/selectUserByName",method = RequestMethod.GET)
+    public List<AliUser> selectUserByName(@RequestParam String userName){return aliUserService.selectUserByName(userName); }
+
+    @ResponseBody
+    @RequestMapping(value = "/selectUserById",method = RequestMethod.GET)
+    public List<AliUser> selectUserById(@RequestParam String userId){return aliUserService.selectUserById(userId); }
 
     @ResponseBody
     @GetMapping("/druid-stat")

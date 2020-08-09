@@ -1,4 +1,5 @@
 com\baron\service\AliOrderServiceImpl.class
+com\baron\config\RemoveDruidAdConfig.class
 com\baron\service\AliUserService.class
 com\baron\vo\AliOrder$AliOrderBuilder.class
 com\baron\Controller\AliUserController.class
@@ -6,6 +7,7 @@ com\baron\vo\AliUser$AliUserBuilder.class
 com\baron\service\AliUserServiceImpl.class
 com\baron\vo\AliUser.class
 com\baron\dao\Dao.class
+com\baron\config\RemoveDruidAdConfig$1.class
 com\baron\MybatisApplication.class
 com\baron\service\AliOrderService.class
 com\baron\vo\AliOrder.class

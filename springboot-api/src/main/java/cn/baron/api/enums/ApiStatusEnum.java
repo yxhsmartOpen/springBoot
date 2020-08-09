@@ -6,7 +6,7 @@ package cn.baron.api.enums;
  * @author Baron
  * @date 2020/08/07
  */
-public enum ApiStatus {
+public enum ApiStatusEnum {
 	/** 成功 */
 	SUCCESS(200, 200, "成功"),
 	/** 失败 */
@@ -47,7 +47,7 @@ public enum ApiStatus {
 	/** 状态名称 */
 	private String name;
 
-	 ApiStatus(int code, int httpCode, String name) {
+	 ApiStatusEnum(int code, int httpCode, String name) {
 		this.code = code;
 		this.httpCode = httpCode;
 		this.name = name;

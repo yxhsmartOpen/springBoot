@@ -3,17 +3,17 @@
 <mapper namespace="com.baron.dao.Dao" >
 
 <sql id="BASE_TABLE">
-    timo.ALI_USER
+    timo.ali_user
 </sql>
 <sql id="INSERT_ORDER_TABLE">
-    timo.ALI_ORDER
+    timo.ali_order
 </sql>
 
-<sql id="BASE_COLUMN">
-    id,name,phone,IDCard,age,sex,address
+<sql id="ALI_USER_COLUMN">
+    id,name,phone,id_card,age,is_sex,address,create_time,update_time
 </sql>
 <sql id="INSERT_ORDER_COLUMN">
-    id,userId,createDate,updateDate,status,orderDetail,remarks,name,groupId
+    id,user_id,create_date,update_date,status,order_detail,remarks,name,group_id
 </sql>
 
 <insert id="insertOrder" parameterType="com.baron.vo.AliOrder">
@@ -22,9 +22,9 @@
         <trim prefix="(" suffix=")" suffixOverrides=",">
 
             <if test="userId != null">
-                userId,
+                user_id,
             </if>
-            createDate,updateDate,status,orderDetail,remarks,name,groupId,
+            create_date,update_date,status,order_detail,remarks,name,group_id,
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             <if test="userId != null">
@@ -40,9 +40,33 @@
 
 <select id="selectUsers" resultType="com.baron.vo.AliUser" >
     SELECT
-    <include refid="BASE_COLUMN"/>
+    <include refid="ALI_USER_COLUMN"/>
     FROM
     <include refid="BASE_TABLE"/>
+</select>
+
+<select id="selectUserByName" resultType="com.baron.vo.AliUser" >
+    SELECT
+    <include refid="ALI_USER_COLUMN"/>
+    FROM
+    <include refid="BASE_TABLE"/>
+    <where>
+        <if test="userName != null">
+          name = #{userName, jdbcType=VARCHAR}
+        </if>
+    </where>
+</select>
+
+<select id="selectUserById" resultType="com.baron.vo.AliUser" >
+        SELECT
+        <include refid="ALI_USER_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        <where>
+            <if test="userId != null">
+                id = #{userId, jdbcType=VARCHAR}
+            </if>
+        </where>
 </select>
 
 </mapper>

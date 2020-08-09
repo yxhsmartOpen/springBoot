@@ -1,9 +1,9 @@
 package com.baron.service;
 
 
-
 import com.baron.dao.Dao;
 import com.baron.vo.AliUser;
+import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,8 +20,19 @@ public class AliUserServiceImpl implements AliUserService {
     private Dao dao;
 
     @Override
-    public List<AliUser> selectUsers() {
+    public List<AliUser> selectPageUsers(int pageNum,int pageSize) {
+
+        /**
+         * 在你需要进行分页的 MyBatis 查询方法前调用 PageHelper.startPage 静态方法即可，紧跟在这个方法后的第一个MyBatis 查询方法会被进行分页。
+         */
+        PageHelper.startPage(pageNum,pageSize);
         return dao.selectUsers();
     }
+
+    @Override
+    public List<AliUser> selectUserByName(String userName) { return dao.selectUserByName(userName);}
+
+    @Override
+    public List<AliUser> selectUserById(String userId) { return dao.selectUserById(userId);}
 
 }

@@ -6,22 +6,18 @@ package cn.baron.api.enums;
  * @author Baron
  * @date 2020/08/07
  */
-public enum YesNoState {
+public enum YesNoStateEnum {
 	/** 关闭 */
 	NO("0", "关"),
 	/** 开启 */
 	YES("1", "开");
 
-	/**
-	 * 状态
-	 */
+	/** 状态 */
 	private String state;
-	/**
-	 * 状态名称
-	 */
+	/** 状态名称 */
 	private String stateName;
 
-	private YesNoState(String state, String stateName) {
+	private YesNoStateEnum(String state, String stateName) {
 		this.state = state;
 		this.stateName = stateName;
 	}
