@@ -2,9 +2,7 @@ package com.baron.Controller;
 
 
 import com.alibaba.druid.stat.DruidStatManagerFacade;
-import com.baron.service.AliOrderService;
 import com.baron.service.AliUserService;
-import com.baron.vo.AliOrder;
 import com.baron.vo.AliUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,20 +20,11 @@ public class AliUserController {
     @Autowired
     private AliUserService aliUserService;
 
-    @Autowired
-    private AliOrderService aliOrderService;
-
     @ResponseBody
     @RequestMapping("/selectAll")
     public List<AliUser> lists(@RequestParam int pageNum,@RequestParam int pageSize){
         // 查询分页用户
         return aliUserService.selectPageUsers(pageNum,pageSize);
-    }
-
-    @ResponseBody
-    @RequestMapping("/addOrder")
-    public Integer addOrder(AliOrder aliOrder){
-        return aliOrderService.insertOrder(aliOrder);
     }
 
     @ResponseBody
