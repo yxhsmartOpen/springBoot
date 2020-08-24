@@ -27,6 +27,9 @@ public class MyTest {
         }
     }
 
+    /**
+     * 把方法最後一行注釋掉
+     */
     @Test
     public void myTest(){
         List<String> generics = null;
@@ -35,7 +38,7 @@ public class MyTest {
         notGenerics.add(new Integer(1));
         generics = notGenerics;
         // 此处抛出 ClassCastException 异常
-        String string = generics.get(0);
+      //  String string = generics.get(0);
     }
 
     /**
