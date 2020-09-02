@@ -4,6 +4,8 @@ package com.baron.service;
 import com.baron.dao.Dao;
 import com.baron.vo.AliUser;
 import com.github.pagehelper.PageHelper;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +16,7 @@ import java.util.List;
  * @date 2020/7/24 9:52
  */
 @Service
+@CacheConfig(cacheNames = "AliUserCache")
 public class AliUserServiceImpl implements AliUserService {
 
     @Resource
@@ -29,9 +32,11 @@ public class AliUserServiceImpl implements AliUserService {
         return dao.selectUsers();
     }
 
+    @Cacheable
     @Override
     public List<AliUser> selectUserByName(String userName) { return dao.selectUserByName(userName);}
 
+    @Cacheable
     @Override
     public List<AliUser> selectUserById(String userId) { return dao.selectUserById(userId);}
 
