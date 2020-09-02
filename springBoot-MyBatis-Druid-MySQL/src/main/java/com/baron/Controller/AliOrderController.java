@@ -3,6 +3,7 @@ package com.baron.Controller;
 import com.baron.service.AliOrderService;
 import com.baron.vo.AliOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,9 @@ public class AliOrderController {
     private AliOrderService aliOrderService;
 
     @ResponseBody
-    @RequestMapping("/addOrder")
+    @RequestMapping(path = "/addOrder", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Integer addOrder(AliOrder aliOrder){
-        return aliOrderService.insertOrder(aliOrder);
+                return aliOrderService.insertOrder(aliOrder);
     }
 }

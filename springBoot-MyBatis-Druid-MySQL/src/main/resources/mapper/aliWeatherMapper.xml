@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baron.dao.Dao" >
+
+<sql id="BASE_WEATHER_TABLE">
+    timo.ali_weather
+</sql>
+
+<sql id="ALI_WEATHER_COLUMN">
+    id,date,week,city_name,description,wind_direction,wind_power,avg,high,low,is_forecast,province_name,create_time,update_time
+</sql>
+    <!-- 多条记录插入 -->
+    <insert id="insertWeathers" >
+        insert into `ali_weather`(
+        `date`, `week`, `city_name`,`description`,`wind_direction`,`wind_power`,`avg`, `high`,
+        `low`, `is_forecast`, `province_name`,`create_time`,`update_time`
+        )values
+        <foreach collection="weatherInfos"  separator="," item="ali_weather" index="i">
+            (
+            #{ali_weather.date},#{ali_weather.week},#{ali_weather.cityName},#{ali_weather.description},
+            #{ali_weather.windDirection},#{ali_weather.windPower},#{ali_weather.avg},#{ali_weather.high},
+            #{ali_weather.low},#{ali_weather.forecast},#{ali_weather.provinceName},#{ali_weather.createTime},#{ali_weather.updateTime}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
+

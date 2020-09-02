@@ -39,12 +39,14 @@ spring:
         session-stat-max-count: 1000 #缺省sessionStatMaxCount是1000个
       aop-patterns: com.baron.dao.Dao.* # Spring 监控配置（配置多个AOP切入点使用英文 逗号分隔）
 
+
+
 # mybatis 配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml # mapper文件所在文件夹
   type-aliases-package: com.baron.vo # 别名类(实体类)所在包
   configuration.map-underscore-to-camel-case: true # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
-  type-handlers-package: geektime.spring.data.mybatisdemo.handler # 扫描typeHandlers的包
+  type-handlers-package: com.baron.handler # 扫描typeHandlers的包
 
 # 分页参数配置 ，对应官方文档 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
 pagehelper:
