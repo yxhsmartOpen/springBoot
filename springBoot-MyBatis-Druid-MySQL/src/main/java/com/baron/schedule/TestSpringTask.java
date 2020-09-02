@@ -42,12 +42,11 @@ import org.springframework.stereotype.Component;
  * 方法二是在方法一的基础上做了功能加强
  *
  * 注解参数功能说明：
- * 在下面 Demo 中，使用了 @Scheduled(fixedRate = 3000) 注解来定义每过 3 秒执行的任务。对于 @Scheduled 的使用可以总结如下几种方式
- * @Scheduled(fixedRate = 5000) ：上一次开始执行时间点之后 5 秒再执行（fixedRate 属性：定时任务开始后再次执行定时任务的延时（需等待上次定时任务完成），单位毫秒）
- * @Scheduled(fixedDelay = 5000) ：上一次执行完毕时间点之后 5 秒再执行（fixedDelay 属性：定时任务执行完成后再次执行定时任务的延时（需等待上次定时任务完成），单位毫秒）
- * @Scheduled(initialDelay = 1000, fixedRate = 3000) ：第一次延迟1秒后执行，之后按 fixedRate 的规则每 3 秒执行一
+ * 使用 @Scheduled(fixedRate = 5000) 注解：上一次开始执行时间点之后 5 秒再执行（fixedRate 属性：定时任务开始后再次执行定时任务的延时（需等待上次定时任务完成），单位毫秒）
+ * 使用 @Scheduled(fixedDelay = 5000) 注解 ：上一次执行完毕时间点之后 5 秒再执行（fixedDelay 属性：定时任务执行完成后再次执行定时任务的延时（需等待上次定时任务完成），单位毫秒）
+ * 使用 @Scheduled(initialDelay = 1000, fixedRate = 3000) 注解 ：第一次延迟1秒后执行，之后按 fixedRate 的规则每 3 秒执行
  *                        次（ initialDelay 属性：第一次执行定时任务的延迟时间，需配合 fixedDelay 或者 fixedRate 来使用）
- * @Scheduled(cron = "0/5 * * * * *") ：通过 cron 表达式定义规则
+ * 一 @Scheduled(cron = "0/5 * * * * *") ：通过 cron 表达式定义规则
  *
  * PS：为了不和 Quartz 实现的定时调度任务冲突，我暂时将 启动类上的注解 {@link org.springframework.scheduling.annotation.EnableScheduling} 去掉了，如果需要再次测试该功能排
  * 除 quartz 实现的定时任务的影响，在启动类上加再加上即可。
