@@ -7,7 +7,7 @@
 </sql>
 
 <sql id="ALI_WEATHER_COLUMN">
-    id,date_id,week,city_name,description,wind_direction,wind_power,avg,high,low,is_forecast,province_name,create_time,update_time
+    id,date_id,week,city_name,description,wind_direction,wind_power,avg,high,low,is_forecast*1 as forecast,province_name,create_time,update_time
 </sql>
     <!-- 多条记录插入 -->
     <insert id="insertList" >
