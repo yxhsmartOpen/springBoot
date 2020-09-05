@@ -3,6 +3,7 @@ package com.baron.service;
 import com.baron.dao.Dao;
 import com.baron.vo.weather.WeatherInfo;
 import com.baron.weather.WeatherUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,6 +19,12 @@ public class WeatherServiceImpl implements WeatherService{
 
     @Resource
     private Dao dao;
+
+    /**
+     * 启动项目的时候，会把这个属性加载到spring 容器里
+     */
+    @Value("${server.port}")
+    private  String arr;
 
     @Override
     public Integer insertList(String cityName) {
@@ -55,7 +62,11 @@ public class WeatherServiceImpl implements WeatherService{
 
     @Override
     public WeatherInfo selectOne(String dateId) {
-        return dao.selectOneOrderByDateId(dateId);
+        WeatherInfo weatherInfo =  dao.selectOneOrderByDateId(dateId);
+        if (null != weatherInfo){
+            return weatherInfo;
+        }
+        return null;
     }
 
     @Override
