@@ -1,9 +1,9 @@
-package com.baron.vo;
+package com.baron.vo.weather;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -16,10 +16,11 @@ import java.time.LocalDateTime;
 @ToString
 @Builder
 public class WeatherInfo implements Serializable {
-    /** 主键 */
+
+    /** 主键ID*/
     private String id;
-    /** 日期 */
-    private LocalDate date;
+    /** 日期_城市拼音_省份拼音 */
+    private String dateId;
     /** 星期几 */
     private String week;
     /** 城市名 */
@@ -36,11 +37,12 @@ public class WeatherInfo implements Serializable {
     private Integer high;
     /** 最低气温 */
     private Integer low;
-    /** 是否是预测数据 */
-    private Boolean forecast;
+    /** 是否是预测数据,0：否，1：是 */
+    private int forecast;
     /** 省份名 */
     private String provinceName;
     /** 创建时间 */
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private LocalDateTime createTime;
     /** 更新时间 */
     private LocalDateTime updateTime;

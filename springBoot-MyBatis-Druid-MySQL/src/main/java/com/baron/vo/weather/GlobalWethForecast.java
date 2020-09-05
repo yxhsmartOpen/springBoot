@@ -1,4 +1,4 @@
-package com.baron.vo;
+package com.baron.vo.weather;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;

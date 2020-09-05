@@ -1,4 +1,4 @@
-package com.baron.vo;
+package com.baron.vo.weather;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -2,7 +2,8 @@ package com.baron.weather;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.baron.vo.WeatherInfo;
+import com.baron.vo.weather.WeatherInfo;
+import com.baron.weather.enums.CsgCity;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,14 +79,16 @@ public class WeatherUtils {
         // 获取昨日的数据
         JSONObject yesterday = dataOfJson.getJSONObject("yesterday");
         WeatherInfo weatherInfo =  WeatherInfo.builder().
-                date(LocalDate.now().plusDays(-1)).
+                dateId(LocalDate.now().plusDays(-1).toString().substring(0,10)+"_"+CsgCity.getCity(dataOfJson.getString("city")).getCode()
+                        +"_"+CsgCity.getCity(dataOfJson.getString("city")).getProvince().getCode()).
                 updateTime(LocalDateTime.now()).
                 week(yesterday.getString("date").substring(yesterday.getString("date").length()-3)).
                 cityName(dataOfJson.getString("city")).
+                provinceName(CsgCity.getCity(dataOfJson.getString("city")).getProvince().getName()).
                 windDirection(yesterday.getString("fx")).
                 windPower(yesterday.getString("fl").replace("<![CDATA[","").replace("]]>","")).
                 description(yesterday.getString("type")).
-                forecast(false).build();
+                forecast(0).build();
 
         String high = yesterday.getString("high");
         String low  = yesterday.getString("low");
@@ -96,15 +99,17 @@ public class WeatherUtils {
         JSONArray forecast = dataOfJson.getJSONArray("forecast");
         for (int i = 0; i < forecast.size(); i++) {
             WeatherInfo weatherInfo1 =  WeatherInfo.builder().
-                    date(LocalDate.now().plusDays(i)).
+                    dateId(LocalDate.now().plusDays(i).toString().substring(0,10)+"_"+CsgCity.getCity(dataOfJson.getString("city")).getCode()
+                            +"_"+CsgCity.getCity(dataOfJson.getString("city")).getProvince().getCode()).
                     createTime(LocalDateTime.now()).
                     updateTime(LocalDateTime.now()).
                     week(forecast.getJSONObject(i).getString("date").substring(forecast.getJSONObject(i).getString("date").length()-3)).
                     cityName(dataOfJson.getString("city")).
+                    provinceName(CsgCity.getCity(dataOfJson.getString("city")).getProvince().getName()).
                     windDirection(forecast.getJSONObject(i).getString("fengxiang")).
                     windPower(forecast.getJSONObject(i).getString("fengli").replace("<![CDATA[","").replace("]]>","")).
                     description(forecast.getJSONObject(i).getString("type")).
-                    forecast(true).build();
+                    forecast(1).build();
 
             String high1 = forecast.getJSONObject(i).getString("high");
             String low1  = forecast.getJSONObject(i).getString("low");

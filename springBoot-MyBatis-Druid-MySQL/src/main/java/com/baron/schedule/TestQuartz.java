@@ -23,7 +23,6 @@ import java.util.Date;
  */
 public class TestQuartz extends QuartzJobBean {
 
-
     /**
      * 执行定时任务
      * @param jobExecutionContext 任务
