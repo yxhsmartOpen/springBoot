@@ -37,8 +37,11 @@ public class WeatherInfo implements Serializable {
     private Integer high;
     /** 最低气温 */
     private Integer low;
-    /** 是否是预测数据,0：否，1：是 */
-    private int forecast;
+    /**
+     *  是否是预测数据,0：否，1：是 :简单的记录一下，MySQL里没有boolean类型，tinyint(1) 类型就是 boolean 类型。当我们在写sql脚本的时候，
+     * 要在返回的字段里这样写 forcast*1 as forecast2，该字段才会返回正常
+     */
+    private Boolean forecast;
     /** 省份名 */
     private String provinceName;
     /** 创建时间 */

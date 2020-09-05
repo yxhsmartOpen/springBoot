@@ -69,11 +69,9 @@ public class WeatherUtils {
         if(dataOfJson.getInteger("status") !=1000){
             return null;
         }
-        logger.error("dataOfJson:"+dataOfJson.toJSONString());
 
         //从json数据中提取数据
         String data = dataOfJson.getString("data");
-        logger.error("data:"+data);
         dataOfJson = JSONObject.parseObject(data);
 
         // 获取昨日的数据
@@ -88,7 +86,7 @@ public class WeatherUtils {
                 windDirection(yesterday.getString("fx")).
                 windPower(yesterday.getString("fl").replace("<![CDATA[","").replace("]]>","")).
                 description(yesterday.getString("type")).
-                forecast(0).build();
+                forecast(false).build();
 
         String high = yesterday.getString("high");
         String low  = yesterday.getString("low");
@@ -109,7 +107,7 @@ public class WeatherUtils {
                     windDirection(forecast.getJSONObject(i).getString("fengxiang")).
                     windPower(forecast.getJSONObject(i).getString("fengli").replace("<![CDATA[","").replace("]]>","")).
                     description(forecast.getJSONObject(i).getString("type")).
-                    forecast(1).build();
+                    forecast(true).build();
 
             String high1 = forecast.getJSONObject(i).getString("high");
             String low1  = forecast.getJSONObject(i).getString("low");

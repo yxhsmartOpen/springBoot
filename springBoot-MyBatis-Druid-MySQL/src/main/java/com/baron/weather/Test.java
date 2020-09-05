@@ -1,8 +1,7 @@
 package com.baron.weather;
 
-import com.baron.service.WeatherService;
 import com.baron.vo.weather.WeatherInfo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
@@ -12,8 +11,8 @@ import java.util.List;
  */
 public class Test {
 
-    @Autowired
-    private WeatherService weatherService;
+    @Value("${server.port}")
+    private static String arr;
 
     public static void main(String[] args) {
         String info = WeatherUtils.GetWeatherData("佛山");
@@ -21,7 +20,6 @@ public class Test {
         for (int i = 0; i < weatherInfos.size(); i++) {
             System.out.println(weatherInfos.get(i).toString());
         }
-
 
     }
 }
