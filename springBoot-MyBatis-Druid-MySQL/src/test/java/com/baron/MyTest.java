@@ -13,6 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.SerializationUtils;
 
 import java.lang.reflect.Constructor;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -246,8 +249,93 @@ public class MyTest implements ApplicationRunner {
          */
     }
 
-    @Test
-    public void testPython(){
 
+     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    /**
+     *  多次运行会爆 {@link java.lang.NumberFormatException} 异常
+     *  解决办法：
+     *  1：每次使用的时候再创建 {@link java.text.SimpleDateFormat}对象，参考{@link MyTest#testSimpleDateFormat2()}
+     *  2：通过{@link java.lang.ThreadLocal}对象解决线程不安全的问题，参考{@link MyTest#testSimpleDateFormat3()}
+     *  3：通过 synchrinized 关键字加锁解决线程不安全问题，参考{@link MyTest#testSimpleDateFormat4()}
+     */
+    @Test
+    public void  testSimpleDateFormat() throws InterruptedException {
+
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(() -> {
+                    try {
+                        System.out.println(sdf.parse("2017-12-13 15:17:27"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+            });
+            thread.start();
+        }
     }
+
+    /**
+     * 每次使用的时候再创建{@link java.text.SimpleDateFormat}对象，这样虽然能保证线程安全，但是频繁创建和消费对象会造成资源的浪费。
+     * @throws InterruptedException
+     */
+    @Test
+    public void  testSimpleDateFormat2() throws InterruptedException {
+
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(() -> {
+                    try {
+                        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        System.out.println(sdf1.parse("2017-12-13 15:17:27"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+            });
+            thread.start();
+        }
+    }
+
+
+    ThreadLocal<DateFormat> dateFormatThreadLocal = new ThreadLocal<DateFormat>(){
+        @Override
+        public SimpleDateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        }
+    };
+
+    /**
+     * 通过 {@link java.lang.ThreadLocal} 类解决 {@link java.text.SimpleDateFormat} 类线程不安全的问题
+     */
+    @Test
+    public void  testSimpleDateFormat3(){
+        for (int i = 0; i < 10; i++) {
+            Thread thread = new Thread(() ->{
+                    try {
+                         System.out.println(dateFormatThreadLocal.get().parse("2017-12-13 15:17:27"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+            });
+            thread.start();
+        }
+    }
+
+    /**
+     * 通过 synchrinized 解决 {@link java.text.SimpleDateFormat} 类线程不安全的问题
+     */
+    @Test
+    public void  testSimpleDateFormat4(){
+        for (int i = 0; i < 100; i++) {
+            Thread thread = new Thread(() ->{
+                    try {
+                        synchronized (sdf){
+                            System.out.println(sdf.parse("2017-12-13 15:17:27"));
+                        }
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+            });
+            thread.start();
+        }
+    }
+
 }
