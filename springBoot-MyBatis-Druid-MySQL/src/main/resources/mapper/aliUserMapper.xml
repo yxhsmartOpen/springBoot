@@ -40,6 +40,14 @@
             </if>
         </where>
 </select>
+    <delete id="deleteOne">
+        delete from timo.ali_user
+        <where>
+            <if test="userId != null">
+                id = #{userId, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </delete>
 
 </mapper>
 
