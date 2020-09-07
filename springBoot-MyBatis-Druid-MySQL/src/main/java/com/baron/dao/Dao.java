@@ -33,4 +33,6 @@ public interface Dao {
 
     Integer updateOne(WeatherInfo weatherInfo);
 
+    Integer deleteOne(@Param("userId") String userId);
+
 }

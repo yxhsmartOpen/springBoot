@@ -36,6 +36,10 @@ public class AliUserController {
     public List<AliUser> selectUserById(@RequestParam String userId){return aliUserService.selectUserById(userId); }
 
     @ResponseBody
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    public Integer delete(@RequestParam String userId){return aliUserService.delete(userId); }
+
+    @ResponseBody
     @GetMapping("/druid-stat")
     public Object getDruidStatData(){
         // DruidStatManagerFacade#getDataSourceStatDataList 该方法可以获取所有数据源的监控数据

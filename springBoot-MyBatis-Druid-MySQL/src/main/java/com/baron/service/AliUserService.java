@@ -16,4 +16,6 @@ public interface AliUserService {
      List<AliUser> selectUserByName(String userName);
 
      List<AliUser> selectUserById(String userId);
+
+     Integer delete(String userId);
 }
