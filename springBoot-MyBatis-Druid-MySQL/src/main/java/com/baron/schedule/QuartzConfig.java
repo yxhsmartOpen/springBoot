@@ -26,7 +26,7 @@ public class QuartzConfig {
         SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.
                 simpleSchedule().
                 /* 设置时间周期单位秒,这里还有其他三种时间范围可供选择 */
-                withIntervalInSeconds(10).
+                withIntervalInSeconds(100000000).
                 repeatForever();
 
         return TriggerBuilder.newTrigger().forJob(testQuartzDetail())

@@ -1,0 +1,132 @@
+[
+	{
+		"code": "GUANGDONG",
+		"csgDqbm": "030000",
+		"name": "广东省",
+		"cities": [
+			{"code":"DongGuan","csgDqbms":[{"dqbm":"031900","dqmc":"东莞供电局","zzbm":"0319"}],"name":"东莞"},
+			{"code":"ChaoZhou","csgDqbms":[{"dqbm":"035100","dqmc":"潮州供电局","zzbm":"0351"}],"name":"潮州"},
+			{"code":"FoShan","csgDqbms":[{"dqbm":"030600","dqmc":"佛山供电局","zzbm":"0306"}],"name":"佛山"},
+			{"code":"HeYuan","csgDqbms":[{"dqbm":"031600","dqmc":"河源供电局","zzbm":"0316"}],"name":"河源"},
+			{"code":"HuiZhou","csgDqbms":[{"dqbm":"031300","dqmc":"惠州供电局","zzbm":"0313"}],"name":"惠州"},
+			{"code":"JiangMen","csgDqbms":[{"dqbm":"030700","dqmc":"江门供电局","zzbm":"0307"}],"name":"江门"},
+			{"code":"JieYang","csgDqbms":[{"dqbm":"035200","dqmc":"揭阳供电局","zzbm":"0352"}],"name":"揭阳"},
+			{"code":"MeiZhou","csgDqbms":[{"dqbm":"031400","dqmc":"梅州供电局","zzbm":"0314"}],"name":"梅州"},
+			{"code":"MaoMing","csgDqbms":[{"dqbm":"030900","dqmc":"茂名供电局","zzbm":"0309"}],"name":"茂名"},
+			{"code":"QingYuan","csgDqbms":[{"dqbm":"031800","dqmc":"清远供电局","zzbm":"0318"}],"name":"清远"},
+			{"code":"ShaoGuan","csgDqbms":[{"dqbm":"030200","dqmc":"韶关供电局","zzbm":"0302"}],"name":"韶关"},
+			{"code":"ShanTou","csgDqbms":[{"dqbm":"030500","dqmc":"汕头供电局","zzbm":"0305"}],"name":"汕头"},
+			{"code":"ShanWei","csgDqbms":[{"dqbm":"031500","dqmc":"汕尾供电局","zzbm":"0315"}],"name":"汕尾"},
+			{"code":"YunFu","csgDqbms":[{"dqbm":"035300","dqmc":"云浮供电局","zzbm":"0353"}],"name":"云浮"},
+			{"code":"YangJiang","csgDqbms":[{"dqbm":"031700","dqmc":"阳江供电局","zzbm":"0317"}],"name":"阳江"},
+			{"code":"ZhuHai","csgDqbms":[{"dqbm":"030400","dqmc":"珠海供电局","zzbm":"0304"}],"name":"珠海"},
+			{"code":"ZhongShan","csgDqbms":[{"dqbm":"032000","dqmc":"中山供电局","zzbm":"0320"}],"name":"中山"},
+			{"code":"ZhaoQing","csgDqbms":[{"dqbm":"031200","dqmc":"肇庆供电局","zzbm":"0312"}],"name":"肇庆"},
+			{"code":"ZhanJiang","csgDqbms":[{"dqbm":"030800","dqmc":"湛江供电局","zzbm":"0308"}],"name":"湛江"}
+		]
+	},
+	{
+		"code": "HAINAN",
+		"csgDqbm": "070000",
+		"name": "海南省",
+		"cities": [
+			{"code":"HaiKou","csgDqbms":[{"dqbm":"070000","dqmc":"海口供电局","zzbm":"0701"}],"name":"海口"},
+			{"code":"SanYa","csgDqbms":[{"dqbm":"070000","dqmc":"三亚供电局","zzbm":"0702"}],"name":"三亚"},
+			{"code":"DanZhou","csgDqbms":[{"dqbm":"070000","dqmc":"儋州供电局","zzbm":"0703"}],"name":"儋州"},
+			{"code":"QiongHai","csgDqbms":[{"dqbm":"070000","dqmc":"琼海供电局","zzbm":"0704"}],"name":"琼海"},
+			{"code":"WenChang","csgDqbms":[{"dqbm":"070000","dqmc":"文昌供电局","zzbm":"0705"}],"name":"文昌"},
+			{"code":"WanNing","csgDqbms":[{"dqbm":"070000","dqmc":"万宁供电局","zzbm":"0706"}],"name":"万宁"},
+			{"code":"ChengMai","csgDqbms":[{"dqbm":"070000","dqmc":"澄迈供电局","zzbm":"0707"}],"name":"澄迈"},
+			{"code":"DingAn","csgDqbms":[{"dqbm":"070000","dqmc":"定安供电局","zzbm":"0708"}],"name":"定安"},
+			{"code":"TunChang","csgDqbms":[{"dqbm":"070000","dqmc":"屯昌供电局","zzbm":"0709"}],"name":"屯昌"},
+			{"code":"LingShui","csgDqbms":[{"dqbm":"070000","dqmc":"陵水供电局","zzbm":"0710"}],"name":"陵水"},
+			{"code":"LinGao","csgDqbms":[{"dqbm":"070000","dqmc":"临高供电局","zzbm":"0711"}],"name":"临高"},
+			{"code":"ChangJiang","csgDqbms":[{"dqbm":"070000","dqmc":"昌江供电局","zzbm":"0712"}],"name":"昌江"},
+			{"code":"DongFang","csgDqbms":[{"dqbm":"070000","dqmc":"东方供电局","zzbm":"0713"}],"name":"东方"},
+			{"code":"WuZhiShan","csgDqbms":[{"dqbm":"070000","dqmc":"五指山供电局","zzbm":"0714"}],"name":"五指山"},
+			{"code":"BaoTing","csgDqbms":[{"dqbm":"070000","dqmc":"保亭供电局","zzbm":"0715"}],"name":"保亭"},
+			{"code":"LeDong","csgDqbms":[{"dqbm":"070000","dqmc":"乐东供电局","zzbm":"0716"}],"name":"乐东"},
+			{"code":"QiongZhong","csgDqbms":[{"dqbm":"070000","dqmc":"琼中供电局","zzbm":"0717"}],"name":"琼中"},
+			{"code":"BaiSha","csgDqbms":[{"dqbm":"070000","dqmc":"白沙供电局","zzbm":"0718"}],"name":"白沙"},
+			{"code":"SanSha","csgDqbms":[{"dqbm":"070000","dqmc":"三沙供电局","zzbm":"0748"}],"name":"三沙"}
+		]
+	},
+	{
+		"code": "GUANGXI",
+		"csgDqbm": "040000",
+		"name": "广西省",
+		"cities": [
+			{"code":"NanNing","csgDqbms":[{"dqbm":"040100","dqmc":"南宁供电局","zzbm":"0401"}],"name":"南宁"},
+			{"code":"LiuZhou","csgDqbms":[{"dqbm":"040200","dqmc":"柳州供电局","zzbm":"0402"}],"name":"柳州"},
+			{"code":"GuiLin","csgDqbms":[{"dqbm":"040300","dqmc":"桂林供电局","zzbm":"0403"}],"name":"桂林"},
+			{"code":"YuLin","csgDqbms":[{"dqbm":"040400","dqmc":"玉林供电局","zzbm":"0404"}],"name":"玉林"},
+			{"code":"HeChi","csgDqbms":[{"dqbm":"040500","dqmc":"河池供电局","zzbm":"0405"}],"name":"河池"},
+			{"code":"QinZhou","csgDqbms":[{"dqbm":"040600","dqmc":"钦州供电局","zzbm":"0406"}],"name":"钦州"},
+			{"code":"FangChengGang","csgDqbms":[{"dqbm":"040700","dqmc":"防城港供电局","zzbm":"0407"}],"name":"防城港"},
+			{"code":"WuZhou","csgDqbms":[{"dqbm":"040800","dqmc":"梧州供电局","zzbm":"0408"}],"name":"梧州"},
+			{"code":"BeiHai","csgDqbms":[{"dqbm":"040900","dqmc":"北海供电局","zzbm":"0409"}],"name":"北海"},
+			{"code":"GuiGang","csgDqbms":[{"dqbm":"041000","dqmc":"贵港供电局","zzbm":"0410"}],"name":"贵港"},
+			{"code":"ChongZuo","csgDqbms":[{"dqbm":"041100","dqmc":"崇左供电局","zzbm":"0411"}],"name":"崇左"},
+			{"code":"LaiBin","csgDqbms":[{"dqbm":"041200","dqmc":"来宾供电局","zzbm":"0412"}],"name":"来宾"},
+			{"code":"BaiSe","csgDqbms":[{"dqbm":"041300","dqmc":"百色供电局","zzbm":"0413"},{"dqbm":"041500","dqmc":"百色供电有限公司","zzbm":"0415"}],"name":"百色"},
+			{"code":"HeZhou","csgDqbms":[{"dqbm":"041400","dqmc":"贺州供电局","zzbm":"0414"}],"name":"贺州"}
+		]
+	},
+	{
+		"code": "GUIZHOU",
+		"csgDqbm": "060000",
+		"name": "贵州省",
+		"cities": [
+			{"code":"AnShun","csgDqbms":[{"dqbm":"060400","dqmc":"安顺供电局","zzbm":"0604"}],"name":"安顺"},
+			{"code":"BiJie","csgDqbms":[{"dqbm":"060700","dqmc":"毕节供电局","zzbm":"0607"}],"name":"毕节"},
+			{"code":"DuYun","csgDqbms":[{"dqbm":"060900","dqmc":"都匀供电局","zzbm":"0609"}],"name":"都匀"},
+			{"code":"GuiYang","csgDqbms":[{"dqbm":"060100","dqmc":"贵阳供电局","zzbm":"0601"}],"name":"贵阳"},
+			{"code":"GuiAn","csgDqbms":[{"dqbm":"061000","dqmc":"贵安供电局","zzbm":"0610"}],"name":"贵安"},
+			{"code":"KaiLi","csgDqbms":[{"dqbm":"060800","dqmc":"凯里供电局","zzbm":"0608"}],"name":"凯里"},
+			{"code":"LiuPanShui","csgDqbms":[{"dqbm":"060200","dqmc":"六盘水供电局","zzbm":"0602"}],"name":"六盘水"},
+			{"code":"TongRen","csgDqbms":[{"dqbm":"060500","dqmc":"铜仁供电局","zzbm":"0605"}],"name":"铜仁"},
+			{"code":"XingYi","csgDqbms":[{"dqbm":"060600","dqmc":"兴义供电局","zzbm":"0606"}],"name":"兴义"},
+			{"code":"ZunYi","csgDqbms":[{"dqbm":"060300","dqmc":"遵义供电局","zzbm":"0603"}],"name":"遵义"}
+		]
+	},
+	{
+		"code": "YUNNAN",
+		"csgDqbm": "050000",
+		"name": "云南省",
+		"cities": [
+			{"code":"KunMing","csgDqbms":[{"dqbm":"050100","dqmc":"昆明供电局","zzbm":"0501"}],"name":"昆明"},
+			{"code":"QuJing","csgDqbms":[{"dqbm":"050200","dqmc":"曲靖供电局","zzbm":"0502"}],"name":"曲靖"},
+			{"code":"YuXi","csgDqbms":[{"dqbm":"050400","dqmc":"玉溪供电局","zzbm":"0504"}],"name":"玉溪"},
+			{"code":"BaoShan","csgDqbms":[{"dqbm":"051200","dqmc":"保山供电局","zzbm":"0512"}],"name":"保山"},
+			{"code":"ZhaoTong","csgDqbms":[{"dqbm":"050700","dqmc":"昭通供电局","zzbm":"0507"}],"name":"昭通"},
+			{"code":"LiJiang","csgDqbms":[{"dqbm":"051400","dqmc":"丽江供电局","zzbm":"0514"}],"name":"丽江"},
+			{"code":"PuEr","csgDqbms":[{"dqbm":"050800","dqmc":"普洱供电局","zzbm":"0508"}],"name":"普洱"},
+			{"code":"LinCang","csgDqbms":[{"dqbm":"051000","dqmc":"临沧供电局","zzbm":"0510"}],"name":"临沧"},
+			{"code":"ChuXiong","csgDqbms":[{"dqbm":"050600","dqmc":"楚雄供电局","zzbm":"0506"}],"name":"楚雄"},
+			{"code":"HongHe","csgDqbms":[{"dqbm":"050300","dqmc":"红河供电局","zzbm":"0503"}],"name":"红河"},
+			{"code":"WenShan","csgDqbms":[{"dqbm":"051100","dqmc":"文山供电局","zzbm":"0511"},{"dqbm":"058100","dqmc":"文山电力股份有限公司","zzbm":"0581"}],"name":"文山"},
+			{"code":"XiShuangBanNa","csgDqbms":[{"dqbm":"050900","dqmc":"西双版纳供电局","zzbm":"0509"}],"name":"西双版纳"},
+			{"code":"DaLi","csgDqbms":[{"dqbm":"050500","dqmc":"大理供电局","zzbm":"0505"}],"name":"大理"},
+			{"code":"DeHong","csgDqbms":[{"dqbm":"051300","dqmc":"德宏供电局","zzbm":"0513"}],"name":"德宏"},
+			{"code":"NuJiang","csgDqbms":[{"dqbm":"051600","dqmc":"怒江供电局","zzbm":"0516"}],"name":"怒江"},
+			{"code":"DiQing","csgDqbms":[{"dqbm":"051500","dqmc":"迪庆供电局","zzbm":"0515"}],"name":"迪庆"},
+			{"code":"RuiLi","csgDqbms":[{"dqbm":"052200","dqmc":"瑞丽供电局","zzbm":"0522"}],"name":"瑞丽"}
+		]
+	},
+	{
+		"code": "GUANGZHOU",
+		"csgDqbm": "080000",
+		"name": "广州",
+		"cities": [
+			{"code":"GuangZhou","csgDqbms":[{"dqbm":"080000","dqmc":"广州供电局","zzbm":"0800"}],"name":"广州"}
+		]
+	},
+	{
+		"code": "SHENZHEN",
+		"csgDqbm": "090000",
+		"name": "深圳",
+		"cities": [
+			{"code":"ShenZhen","csgDqbms":[{"dqbm":"090000","dqmc":"深圳供电局","zzbm":"09"}],"name":"深圳"}
+		]
+	}
+]

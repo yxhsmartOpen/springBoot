@@ -7,22 +7,66 @@
 </sql>
 
 <sql id="ALI_WEATHER_COLUMN">
-    id,date,week,city_name,description,wind_direction,wind_power,avg,high,low,is_forecast,province_name,create_time,update_time
+    id,date_id,week,city_name,description,wind_direction,wind_power,avg,high,low,is_forecast*1 as forecast,province_name,create_time,update_time
 </sql>
     <!-- 多条记录插入 -->
-    <insert id="insertWeathers" >
+    <insert id="insertList" >
         insert into `ali_weather`(
-        `date`, `week`, `city_name`,`description`,`wind_direction`,`wind_power`,`avg`, `high`,
+        `date_id`, `week`, `city_name`,`description`,`wind_direction`,`wind_power`,`avg`, `high`,
         `low`, `is_forecast`, `province_name`,`create_time`,`update_time`
         )values
         <foreach collection="weatherInfos"  separator="," item="ali_weather" index="i">
             (
-            #{ali_weather.date},#{ali_weather.week},#{ali_weather.cityName},#{ali_weather.description},
+            #{ali_weather.dateId},#{ali_weather.week},#{ali_weather.cityName},#{ali_weather.description},
             #{ali_weather.windDirection},#{ali_weather.windPower},#{ali_weather.avg},#{ali_weather.high},
             #{ali_weather.low},#{ali_weather.forecast},#{ali_weather.provinceName},#{ali_weather.createTime},#{ali_weather.updateTime}
             )
         </foreach>
     </insert>
 
+    <insert id="insertOne" parameterType="com.baron.vo.weather.WeatherInfo">
+        INSERT INTO
+        <include refid="BASE_WEATHER_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="dateId != null">
+                date_id,
+            </if>
+            `week`, `city_name`,`description`,`wind_direction`,`wind_power`,`avg`, `high`,
+            `low`, `is_forecast`, `province_name`,`create_time`,`update_time`
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            <if test="dateId != null">
+                #{dateId, jdbcType=VARCHAR},
+            </if>
+
+            #{week,},#{cityName}, #{description},#{windDirection},#{windPower}
+            ,#{avg},#{high},#{low},#{forecast},#{provinceName},#{createTime},#{updateTime},
+        </trim>
+    </insert>
+    <select id="selectOneOrderByDateId" parameterType="java.lang.String" resultType="com.baron.vo.weather.WeatherInfo" >
+        SELECT
+        <include refid="ALI_WEATHER_COLUMN"/>
+        FROM
+        <include refid="BASE_WEATHER_TABLE"/>
+        <where>
+            <if test="dateId != null">
+                date_id = #{dateId, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+    <update id="updateOne">
+        update ali_weather
+        <set>
+            <if test="updateTime != null">update_time=#{updateTime},</if>
+            <if test="forecast != null">is_forecast=#{forecast},</if>
+            <if test="description != null">description=#{description},</if>
+            <if test="windDirection != null">wind_direction=#{windDirection},</if>
+            <if test="windPower != null">wind_power=#{windPower},</if>
+            <if test="avg != null">avg=#{avg},</if>
+            <if test="high != null">high=#{high},</if>
+            <if test="low != null">low=#{low},</if>
+        </set>
+        where date_id=#{dateId}
+    </update>
 </mapper>
 

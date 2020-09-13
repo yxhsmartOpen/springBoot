@@ -3,10 +3,11 @@ package com.baron.weather;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baron.vo.weather.WeatherInfo;
-import com.baron.weather.enums.CsgCity;
+import com.baron.weather.enums.City;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -14,8 +15,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -24,11 +24,14 @@ import java.util.zip.GZIPInputStream;
  * @date 2020/9/1 17:40
  */
 @Slf4j
+@Component
 public class WeatherUtils {
 
     private static Logger logger = LoggerFactory.getLogger(WeatherUtils.class);
 
-    public  static String GetWeatherData(String cityName) {
+    String path = String.valueOf(this.getClass().getResourceAsStream("/"));
+
+    public  static String getWeatherData(String cityName) {
         StringBuilder sb=new StringBuilder();;
         try {
             /** cityname = URLEncoder.encode(cityName, "UTF-8"); */
@@ -62,11 +65,13 @@ public class WeatherUtils {
      * @param
      * @return
      */
-    public static  List<WeatherInfo> GetWeather(String weatherInfobyJson){
+    public static  List<WeatherInfo> getWeather(String weatherInfobyJson){
         List<WeatherInfo> list = new ArrayList<>();
 
         JSONObject dataOfJson = JSONObject.parseObject(weatherInfobyJson);
-        if(dataOfJson.getInteger("status") !=1000){
+        if(dataOfJson.getInteger("status") != 1000){
+            Integer status = dataOfJson.getInteger("status");
+            logger.error("无效的请求 status={}",status);
             return null;
         }
 
@@ -74,15 +79,20 @@ public class WeatherUtils {
         String data = dataOfJson.getString("data");
         dataOfJson = JSONObject.parseObject(data);
 
+        if (null == City.getCity(dataOfJson.getString("city"))){
+            String key = dataOfJson.getString("city");
+            log.error("无效的城市 key={}",key);
+            return null;
+        }
+
         // 获取昨日的数据
         JSONObject yesterday = dataOfJson.getJSONObject("yesterday");
         WeatherInfo weatherInfo =  WeatherInfo.builder().
-                dateId(LocalDate.now().plusDays(-1).toString().substring(0,10)+"_"+CsgCity.getCity(dataOfJson.getString("city")).getCode()
-                        +"_"+CsgCity.getCity(dataOfJson.getString("city")).getProvince().getCode()).
+                dateId(LocalDate.now().plusDays(-1).toString().substring(0,10)+"_"+City.getCity(dataOfJson.getString("city")).getCode()).
                 updateTime(LocalDateTime.now()).
                 week(yesterday.getString("date").substring(yesterday.getString("date").length()-3)).
                 cityName(dataOfJson.getString("city")).
-                provinceName(CsgCity.getCity(dataOfJson.getString("city")).getProvince().getName()).
+                provinceName(City.getCity(dataOfJson.getString("city")).getProvince().getName()).
                 windDirection(yesterday.getString("fx")).
                 windPower(yesterday.getString("fl").replace("<![CDATA[","").replace("]]>","")).
                 description(yesterday.getString("type")).
@@ -97,13 +107,12 @@ public class WeatherUtils {
         JSONArray forecast = dataOfJson.getJSONArray("forecast");
         for (int i = 0; i < forecast.size(); i++) {
             WeatherInfo weatherInfo1 =  WeatherInfo.builder().
-                    dateId(LocalDate.now().plusDays(i).toString().substring(0,10)+"_"+CsgCity.getCity(dataOfJson.getString("city")).getCode()
-                            +"_"+CsgCity.getCity(dataOfJson.getString("city")).getProvince().getCode()).
+                    dateId(LocalDate.now().plusDays(i).toString().substring(0,10)+"_"+City.getCity(dataOfJson.getString("city")).getCode()).
                     createTime(LocalDateTime.now()).
                     updateTime(LocalDateTime.now()).
                     week(forecast.getJSONObject(i).getString("date").substring(forecast.getJSONObject(i).getString("date").length()-3)).
                     cityName(dataOfJson.getString("city")).
-                    provinceName(CsgCity.getCity(dataOfJson.getString("city")).getProvince().getName()).
+                    provinceName(City.getCity(dataOfJson.getString("city")).getProvince().getName()).
                     windDirection(forecast.getJSONObject(i).getString("fengxiang")).
                     windPower(forecast.getJSONObject(i).getString("fengli").replace("<![CDATA[","").replace("]]>","")).
                     description(forecast.getJSONObject(i).getString("type")).
@@ -130,6 +139,36 @@ public class WeatherUtils {
         weatherInfo.setAvg((weatherInfo.getLow()+weatherInfo.getHigh())/2);
 
         return weatherInfo;
+    }
+
+    /**
+     * 先从文件加载城市名称数据，再存在缓存中
+     * @return Map<String,List>
+     * @throws IOException
+     */
+    public  Map<String,List> getCityList() throws IOException {
+        Map<String,List> mapList = new HashMap<>();
+        BufferedReader bufferedReader= null;
+        StringBuilder stringBuilder = new StringBuilder(1024);
+        try {
+
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("D:\\MAVEN\\springBoot-family\\springBoot-MyBatis-Druid-MySQL\\src\\main\\resources\\countyCity.json")));
+            while (bufferedReader.readLine() != null ){
+                stringBuilder.append(bufferedReader.readLine());
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String [] strings = stringBuilder.toString().replace("null","").trim().replaceAll("]","]=").split("=");
+        for (String s : strings) {
+            String key = s.split(":")[0].replaceAll("\"","");
+            String listValues = s.split(":")[1].replace("\"","");
+            String[] lits = listValues.substring(1,listValues.length()-1).split(",");
+            mapList.put(key,Arrays.asList(lits));
+        }
+
+        return mapList;
     }
 
 }

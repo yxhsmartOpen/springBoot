@@ -1,9 +1,16 @@
 package com.baron.schedule;
 
+import com.baron.service.WeatherService;
+import com.baron.weather.WeatherUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.JobExecutionContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
+import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 测试 Quartz：这是一个功能比较强大的的调度器，可以让你的程序在指定时间执行，也可以按照某一个频度执行，配置起来稍显复杂。
@@ -21,7 +28,11 @@ import java.util.Date;
  * @author Baron
  * @date 2020/9/2 21:02
  */
+@Slf4j
 public class TestQuartz extends QuartzJobBean {
+
+    @Autowired
+    private WeatherService weatherService ;
 
     /**
      * 执行定时任务
@@ -30,5 +41,19 @@ public class TestQuartz extends QuartzJobBean {
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) {
         System.out.println("quartz task "+new Date());
+        WeatherUtils weatherUtils = new WeatherUtils();
+        try {
+            Map<String,List> listMap = weatherUtils.getCityList();
+            for (Map.Entry<String,List> entry : listMap.entrySet()){
+                List<String > list = entry.getValue();
+                for (String cityName : list){
+                    System.out.println(cityName);
+                     weatherService.insertOne(cityName);
+                }
+            }
+        } catch (IOException e) {
+            // 打印日志，但是不抛出异常
+            log.error(e.getMessage());
+        }
     }
 }

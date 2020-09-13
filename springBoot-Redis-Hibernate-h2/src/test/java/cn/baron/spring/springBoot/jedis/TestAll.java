@@ -65,4 +65,8 @@ public class TestAll {
         // 关闭JedisCluster对象
         jedisCluster.close();
     }
+
+
+
+
 }

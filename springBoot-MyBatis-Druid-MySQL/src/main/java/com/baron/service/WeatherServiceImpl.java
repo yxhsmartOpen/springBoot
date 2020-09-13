@@ -35,8 +35,16 @@ public class WeatherServiceImpl implements WeatherService{
             log.info("参数 cityName非法，cityName={}",cityName);
             return 0;
         }
-        String info = WeatherUtils.GetWeatherData(cityName);
-        List<WeatherInfo> weatherInfos = WeatherUtils.GetWeather(info);
+        String info = WeatherUtils.getWeatherData(cityName);
+        if (null == info){
+            log.error("无效的城市 key={}",cityName);
+            return 0;
+        }
+        List<WeatherInfo> weatherInfos = WeatherUtils.getWeather(info);
+        if (null == weatherInfos){
+            log.error("无效的城市 key={}",cityName);
+            return 0;
+        }
         List<WeatherInfo> weatherInfoList = new ArrayList<>();
         for (WeatherInfo weatherInfo : weatherInfos) {
             WeatherInfo weatherInfo1 = selectOne(weatherInfo.getDateId());
@@ -47,7 +55,7 @@ public class WeatherServiceImpl implements WeatherService{
         if (weatherInfoList.size() > 0){
             return dao.insertList(weatherInfoList);
         }
-        return null;
+        return 0;
     }
 
     @Override
@@ -56,8 +64,16 @@ public class WeatherServiceImpl implements WeatherService{
             log.info("参数 cityName非法，cityName={}",cityName);
             return 0;
         }
-        String info = WeatherUtils.GetWeatherData(cityName);
-        List<WeatherInfo> weatherInfos = WeatherUtils.GetWeather(info);
+        String info = WeatherUtils.getWeatherData(cityName);
+        if (null == info){
+            log.error("无效的城市 key={}",cityName);
+            return 0;
+        }
+        List<WeatherInfo> weatherInfos = WeatherUtils.getWeather(info);
+        if (null == weatherInfos){
+            log.error("无效的城市 key={}",cityName);
+            return 0;
+        }
         Integer a = 0;
         for (WeatherInfo weatherInfo : weatherInfos) {
             WeatherInfo weatherInfo1 = selectOne(weatherInfo.getDateId());

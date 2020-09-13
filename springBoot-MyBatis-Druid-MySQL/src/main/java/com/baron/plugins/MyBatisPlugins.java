@@ -17,9 +17,7 @@ import java.util.Properties;
  * @date 2020/9/6 15:14
  */
 @Slf4j
-@Intercepts({@Signature(type = Executor.class,method = "update",args = {MappedStatement.class,Object.class}),
-        @Signature(type = Executor.class,method = "select",args = {MappedStatement.class,Object.class}),
-        @Signature(type = Executor.class,method = "batch",args = {MappedStatement.class,Object.class})})
+@Intercepts({@Signature(type = Executor.class,method = "update",args = {MappedStatement.class,Object.class})})
 public class MyBatisPlugins implements Interceptor {
 
     private static String SQL_WHERE = "where";

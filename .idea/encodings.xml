@@ -7,8 +7,10 @@
     <file url="file://$PROJECT_DIR$/springBootMongoDBRepository/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-multi-datasource-h2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-performance-aspect/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-reactive-mongo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-reactive-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis-lock/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

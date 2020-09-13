@@ -5,6 +5,7 @@ import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,11 +26,15 @@ import java.util.List;
 @EnableCaching
 public class MybatisApplication  implements ApplicationRunner {
 
+    @Value("${file.local.path}")
+    private  String fileLocalPath;
+
     public static void main(String[] args) {SpringApplication.run(MybatisApplication.class, args);}
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         //generateArtifacts();
+        System.out.println(fileLocalPath);
     }
 
     private void generateArtifacts() throws Exception{
