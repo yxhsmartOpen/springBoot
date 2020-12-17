@@ -1,0 +1,36 @@
+{
+  "groups": [
+    {
+      "name": "baron.redission",
+      "type": "cn.baron.redisson.RedissonProperties",
+      "sourceType": "cn.baron.redisson.RedissonProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "baron.redission.host",
+      "type": "java.lang.String",
+      "sourceType": "cn.baron.redisson.RedissonProperties",
+      "defaultValue": "localhost"
+    },
+    {
+      "name": "baron.redission.port",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.baron.redisson.RedissonProperties",
+      "defaultValue": 6379
+    },
+    {
+      "name": "baron.redission.ssl",
+      "type": "java.lang.Boolean",
+      "sourceType": "cn.baron.redisson.RedissonProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "baron.redission.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.baron.redisson.RedissonProperties",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}
