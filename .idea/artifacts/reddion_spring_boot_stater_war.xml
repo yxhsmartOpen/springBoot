@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="reddion-spring-boot-stater:war">
+    <output-path>$PROJECT_DIR$/reddion-spring-boot-stater/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>reddion-spring-boot-stater</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="reddion-spring-boot-stater-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="reddion-spring-boot-stater:war exploded" />
+    </root>
+  </artifact>
+</component>

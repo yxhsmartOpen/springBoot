@@ -1,0 +1,56 @@
+server:
+  port: 8084
+
+### spring配置
+spring:
+  datasource:
+    ##### JDBC 配置 #######
+    url: jdbc:mysql://106.55.23.191:3306/timo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: ABCabc123!
+    driver-class-name: com.mysql.jdbc.Driver
+
+    # Druid 连接池自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+    druid:
+      filters: stat,wall,log4j2  # 过滤器设置（第一个stat很重要，没有的话会监控不到SQL）
+      min-idle: 4 # 池中维护的最小空闲连接数，默认为 0 个。
+      max-active: 20 # 池中最大连接数，包括闲置和使用中的连接，默认为 8 个。
+      initial-size: 2
+      max-wait: 100
+      filter:
+        stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+          log-slow-sql: true # 开启慢查询记录
+          slow-sql-millis: 30 # 慢 SQL 的标准，单位：毫秒
+          enabled: true
+      stat-view-servlet: # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+        enabled: true # 是否开启 StatViewServlet
+        login-username: baron # 账号
+        login-password: baron # 密码
+        url-pattern: /druid/* #内置监控页面的地址
+        reset-enable: false #关闭 Reset All 功能
+        allow: 127.0.0.1 #白名单（如果allow没有配置或者为空，则允许所有访问）
+        deny: 192.168.10.11 #黑名单（deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝）
+      web-stat-filter: ##### WebStatFilter 配置 #######
+        enabled: true #是否启用 WebStatFilter
+        url-pattern: /* #添加过滤规则
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"  #排除一些不必要的url
+        session-stat-enable: true #开启session统计功能
+        session-stat-max-count: 1000 #缺省sessionStatMaxCount是1000个
+      aop-patterns: cn.baron.weather.weatherdatacollect.mapper.WeatherInfoMapper.* # Spring 监控配置（配置多个AOP切入点使用英文 逗号分隔）
+
+
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # mapper文件所在文件夹
+  type-aliases-package: cn.baron.weather.weatherdatacollect.vo # 别名类(实体类)所在包，在*mapper.xml文件中，该包名下的类不需要指定类的全限定名，例如 resultType="AliUser" ，而不需要resultType="com.baron.vo.AliUser"
+  configuration.map-underscore-to-camel-case: true # 驼峰命名规范 如：数据库字段是  order_id 那么 实体字段就要写成 orderId
+
+# 分页参数配置 ，对应官方文档 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md
+pagehelper:
+  offset-as-page-num: true # 默认值为 false，该参数对使用 RowBounds 作为分页参数时有效。 当该参数设置为 true 时，会将 RowBounds 中的 offset 参数当成 pageNum 使用，可以用页码和页面大小两个参数进行分页。
+  reasonable: true # 分页合理化参数，默认值为false。当该参数设置为 true 时，pageNum<=0 时会查询第一页， pageNum>pages（超过总数时），会查询最后一页。默认false 时，直接根据参数进行查询。
+  page-size-zero: true # 默认值为 false，当该参数设置为 true 时，如果 pageSize=0 或者 RowBounds.limit = 0 就会查询出全部的结果（相当于没有执行分页查询，但是返回结果仍然是 Page 类型）。
+  support-methods-arguments: true # 支持通过 Mapper 接口参数来传递分页参数，默认值false，分页插件会从查询方法的参数值中，自动根据上面 params 配置的字段中取值，查找到合适的值时就会自动分页。 使用方法可以参考测试代码中的 com.github.pagehelper.test.basic 包下的 ArgumentsMapTest 和 ArgumentsObjTest。
+
+file.local.path: D:\MAVEN\springBoot-family\weather-data-collect\src\main\resources\\CsgCitySimple.json

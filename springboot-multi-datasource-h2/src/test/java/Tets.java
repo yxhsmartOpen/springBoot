@@ -26,4 +26,9 @@ public class Tets {
         }
         System.out.println(list);
     }
+
+    @Test
+    public void test2(){
+        System.out.println(1);
+    }
 }

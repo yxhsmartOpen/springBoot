@@ -3,7 +3,6 @@ package com.baron.dao;
 
 import com.baron.vo.AliOrder;
 import com.baron.vo.AliUser;
-import com.baron.vo.weather.WeatherInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,14 +24,8 @@ public interface Dao {
 
     Integer insertOrder(AliOrder aliOrder);
 
-    Integer insertList(@Param("weatherInfos") List<WeatherInfo> weatherInfos);
-
-    Integer insertOne(WeatherInfo weatherInfo);
-
-    WeatherInfo selectOneOrderByDateId(@Param("dateId") String dateId);
-
-    Integer updateOne(WeatherInfo weatherInfo);
-
     Integer deleteOne(@Param("userId") String userId);
+
+    Integer insertBatch(List<AliUser> aliUsers);
 
 }

@@ -18,4 +18,6 @@ public interface AliUserService {
      List<AliUser> selectUserById(String userId);
 
      Integer delete(String userId);
+
+     Integer insertBatch(List<AliUser> aliUsers);
 }

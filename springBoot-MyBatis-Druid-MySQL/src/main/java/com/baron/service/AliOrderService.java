@@ -10,4 +10,5 @@ import com.baron.vo.AliOrder;
 public interface AliOrderService {
 
      Integer insertOrder(AliOrder aliOrder);
+
 }

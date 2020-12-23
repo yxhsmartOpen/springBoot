@@ -22,6 +22,6 @@ public class AliOrderController {
     @RequestMapping(path = "/addOrder", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Integer addOrder(AliOrder aliOrder){
-                return aliOrderService.insertOrder(aliOrder);
+        return aliOrderService.insertOrder(aliOrder);
     }
 }

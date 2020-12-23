@@ -2,7 +2,6 @@ package com.baron.service;
 
 import com.baron.dao.Dao;
 import com.baron.vo.AliOrder;
-
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,4 +41,6 @@ public class AliOrderServiceImpl implements AliOrderService {
 
         return dao.insertOrder(aliOrder);
     }
+
+
 }

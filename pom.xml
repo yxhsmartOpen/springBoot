@@ -26,6 +26,8 @@
         <module>springboot-reactive-mongo</module>
         <module>springboot-performance-aspect</module>
         <module>springboot-redis-lock</module>
+        <module>redisson-spring-boot-stater</module>
+        <module>weather-data-collect</module>
     </modules>
 
     <properties>

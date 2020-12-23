@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.baron.dao.Dao" >
+<mapper namespace="com.baron.dao.Dao">
 
-<sql id="BASE_TABLE">
+    <sql id="BASE_TABLE">
     timo.ali_user
-</sql>
+   </sql>
 
-<sql id="ALI_USER_COLUMN">
+    <sql id="ALI_USER_COLUMN">
     id,name,phone,id_card,age,is_sex,address,create_time,update_time
-</sql>
+   </sql>
 
-<select id="selectUsers" resultType="com.baron.vo.AliUser" >
-    SELECT
-    <include refid="ALI_USER_COLUMN"/>
-    FROM
-    <include refid="BASE_TABLE"/>
-</select>
+    <select id="selectUsers" resultType="AliUser">
+        SELECT
+        <include refid="ALI_USER_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
 
-<select id="selectUserByName" resultType="com.baron.vo.AliUser" >
-    SELECT
-    <include refid="ALI_USER_COLUMN"/>
-    FROM
-    <include refid="BASE_TABLE"/>
-    <where>
-        <if test="userName != null">
-          name = #{userName, jdbcType=VARCHAR}
-        </if>
-    </where>
-</select>
+    <select id="selectUserByName" resultType="AliUser">
+        SELECT
+        <include refid="ALI_USER_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        <where>
+            <if test="userName != null">
+                name = #{userName, jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
 
-<select id="selectUserById" resultType="com.baron.vo.AliUser" >
+    <select id="selectUserById" resultType="AliUser">
         SELECT
         <include refid="ALI_USER_COLUMN"/>
         FROM
@@ -39,7 +39,7 @@
                 id = #{userId, jdbcType=VARCHAR}
             </if>
         </where>
-</select>
+    </select>
     <delete id="deleteOne">
         delete from timo.ali_user
         <where>
@@ -49,5 +49,16 @@
         </where>
     </delete>
 
+    <insert id="insertBatch" parameterType="java.util.List" useGeneratedKeys="true">
+        insert into timo.ali_user
+        (name,phone,id_card,age,is_sex,address,create_time,update_time)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.name},#{item.phone},#{item.idCard}, #{item.age},
+            #{item.sex},#{item.address},#{item.createTime},#{item.updateTime}
+            )
+        </foreach>
+    </insert>
 </mapper>
 

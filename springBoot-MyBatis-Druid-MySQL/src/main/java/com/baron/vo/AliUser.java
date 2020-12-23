@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 用户实体类
@@ -21,12 +21,12 @@ public class AliUser implements Serializable {
 
     private Integer id;
     private String name;
-    private Integer phone;
+    private String phone;
     private String idCard;
     private Integer age;
     private Integer sex;
     private String address;
-    private Date createTime;
-    private Date updateTime;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
 }

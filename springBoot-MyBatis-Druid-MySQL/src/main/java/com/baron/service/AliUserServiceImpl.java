@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -64,5 +65,26 @@ public class AliUserServiceImpl implements AliUserService {
         log.info("参数userId非法，userId={}",userId);
         return dao.deleteOne(userId);
     }
-
+    @Override
+    public Integer insertBatch(List<AliUser> aliUsers){
+        aliUsers.add(new AliUser().
+                toBuilder().
+                name("小王").
+                age(18).
+                phone("13975410736").
+                createTime(LocalDateTime.now()).
+                updateTime(LocalDateTime.now()).
+                address("深圳市南山区长园工业园1栋401室").
+                idCard("sdtx").build());
+        aliUsers.add(new AliUser().
+                toBuilder().
+                name("小李").
+                age(19).
+                phone("13375432341").
+                createTime(LocalDateTime.now()).
+                updateTime(LocalDateTime.now()).
+                address("深圳市南山区长园工业园1栋401室").
+                idCard("sdty").build());
+        return dao.insertBatch(aliUsers);
+    }
 }

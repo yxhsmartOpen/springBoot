@@ -2,7 +2,6 @@ package com.baron.io;
 
 
 import com.baron.weather.WeatherUtils;
-import com.baron.weather.enums.CharacterPinYinConvert;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

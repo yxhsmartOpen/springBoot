@@ -22,7 +22,7 @@ public class RedissonAutoConfiguration {
         Config config = new Config();
         String prefix="redis://";
         if(redissonProperties.isSsl()){
-            prefix="rediss://";
+            prefix="redis://";
         }
         config.useSingleServer().
                 setAddress(prefix+redissonProperties.getHost()+":"+redissonProperties.getPort()).

@@ -7,23 +7,43 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-performance-aspect" />
-        <module name="springboot-api" />
         <module name="springBoot-Redis-Hibernate-h2" />
+        <module name="springBootMongoDB" />
+        <module name="springboot-reactive-mongo" />
+        <module name="springboot-performance-aspect" />
+        <module name="reddion-spring-boot-stater" />
+        <module name="springboot-api" />
         <module name="springboot-reactive-redis" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
-        <module name="springBootMongoDB" />
         <module name="springboot-multi-datasource-h2" />
-        <module name="springboot-reactive-mongo" />
         <module name="springBootMongoDBRepository" />
         <module name="springboot-redis-lock" />
+        <module name="redisson-spring-boot-stater" />
+        <module name="weather-data-collect" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="redisson-spring-boot-stater" target="1.8" />
+      <module name="springboot-api" target="1.8" />
+      <module name="springBoot-family" target="1.8" />
+      <module name="springboot-multi-datasource-h2" target="1.8" />
+      <module name="springBoot-MyBatis-Druid-MySQL" target="1.8" />
+      <module name="springboot-performance-aspect" target="1.8" />
+      <module name="springboot-reactive-mongo" target="1.8" />
+      <module name="springboot-reactive-redis" target="1.8" />
+      <module name="springBoot-Redis-Hibernate-h2" target="1.8" />
+      <module name="springboot-redis-lock" target="1.8" />
+      <module name="springBootMongoDB" target="1.8" />
+      <module name="springBootMongoDBRepository" target="1.8" />
+      <module name="weather-data-collect" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="redisson-spring-boot-stater" options="" />
       <module name="springBoot-MyBatis-Druid-MySQL" options="-parameters" />
       <module name="springBoot-Redis-Hibernate-h2" options="-parameters" />
+      <module name="springBoot-family" options="-parameters" />
       <module name="springBootMongoDB" options="-parameters" />
       <module name="springBootMongoDBRepository" options="-parameters" />
       <module name="springboot-api" options="-parameters" />
@@ -32,6 +52,7 @@
       <module name="springboot-reactive-mongo" options="-parameters" />
       <module name="springboot-reactive-redis" options="-parameters" />
       <module name="springboot-redis-lock" options="-parameters" />
+      <module name="weather-data-collect" options="-parameters" />
     </option>
   </component>
 </project>
