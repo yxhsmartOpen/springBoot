@@ -13,12 +13,32 @@ import java.util.List;
  */
 @Mapper
 public interface WeatherInfoMapper {
+    /**
+     * 批量插入
+     * @param weatherInfos 数据集合
+     * @return Integer 插入成功数
+     */
     Integer insertList(@Param("weatherInfos") List<WeatherInfo> weatherInfos);
 
+    /**
+     * 单条插入
+     * @param weatherInfo 天气实体
+     * @return Integer 插入成功数
+     */
     Integer insertOne(WeatherInfo weatherInfo);
 
+    /**
+     * 根据主键查找
+     * @param dateId 主键
+     * @return WeatherInfo 实体
+     */
     WeatherInfo selectOneOrderByDateId(@Param("dateId") String dateId);
 
+    /**
+     * 更新
+     * @param weatherInfo 实体
+     * @return 更新状态
+     */
     Integer updateOne(WeatherInfo weatherInfo);
 
 }

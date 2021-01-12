@@ -1421,15 +1421,15 @@ public enum City {
     /**
      * 城拼音
      */
-    private String code;
+    private final String code;
     /**
      * 2345网城编码
      */
-    private String weth2345Code;
+    private final String weth2345Code;
     /**
      * 中国天气网城编码
      */
-    private String wethCode;
+    private final String wethCode;
     /**
      * 中文名称
      */
@@ -1501,7 +1501,7 @@ public enum City {
 
     private void initMap(String name, City city) {
         if (City.map == null) {
-            City.map = new LinkedHashMap<String, City>();
+            City.map = new LinkedHashMap<>();
         }
         City.map.put(name, city);
     }

@@ -5,8 +5,7 @@ import java.util.Map;
 
 
 /**
- * 南方五省城市全局天气枚举类
- *
+ * @Dsecription 南方五省城市全局天气枚举类
  * @author Baron
  * @date  2017年3月25日 下午2:35:16
  */
@@ -400,15 +399,15 @@ public enum CsgCity {
     /**
      * 城拼音
      */
-    private String code;
+    private final String code;
     /**
      * 2345网城编码
      */
-    private String weth2345Code;
+    private final String weth2345Code;
     /**
      * 中国天气网城编码
      */
-    private String wethCode;
+    private final String wethCode;
     /**
      * 中文名称
      */
@@ -480,7 +479,7 @@ public enum CsgCity {
 
     private void initMap(String name, CsgCity city) {
         if (CsgCity.map == null) {
-            CsgCity.map = new LinkedHashMap<String, CsgCity>();
+            CsgCity.map = new LinkedHashMap<>();
         }
         CsgCity.map.put(name, city);
     }

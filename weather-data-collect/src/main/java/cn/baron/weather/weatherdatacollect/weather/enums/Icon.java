@@ -5,22 +5,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 天气状况代码和图标枚举类
- * 设计图片时按照重点来划分，比如，小到中雨，倾向的是中雨，中到大雨，倾向的是大雨。。。。。。。。。。。。
- * 
+ * @Dsecription 天气状况代码和图标枚举类
+ *  设计图片时按照重点来划分，比如，小到中雨，倾向的是中雨，中到大雨，倾向的是大雨。。。。。。。。。。。。
  * @author Baron
  * @date 2017年3月30日 下午4:46:28
  */
 public enum Icon {
-	/* 晴* */
+	/** 晴 */
 	QING("100", "晴", "http://files.heweather.com/cond_icon/100.png"),
-	/* 多云* */
+	/** 多云 */
 	DUO_YUN("101", "多云,阴~多云,多云转阴,多云~阴,阴转多云", "http://files.heweather.com/cond_icon/101.png"),
-	/* 晴间多云* */
+	/** 晴间多云 */
 	QING_JIAN_DUO_YUN("103", "晴间多云,晴转多云,晴~多云,多云~晴,少云", "http://files.heweather.com/cond_icon/103.png"),
-	/* 阴* */
+	/** 阴 */
 	YIN("104", "阴", "http://files.heweather.com/cond_icon/104.png"),
-	/* 以小雨为主* */
+	/** 以小雨为主 */
 	DUO_YUN_XIAO_YU("134", "多云~小雨,小雨~多云,阴~小雨,小雨~阴,小雨,小雨~晴", ""),
 	/* 按风力级别的大小划分等级* */
 	HE_FENG("203", "和风,清风,微风,有风,平静", "http://files.heweather.com/cond_icon/203.png"),

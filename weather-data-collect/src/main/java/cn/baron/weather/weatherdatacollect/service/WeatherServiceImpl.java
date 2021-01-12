@@ -5,7 +5,6 @@ import cn.baron.weather.weatherdatacollect.mapper.WeatherInfoMapper;
 import cn.baron.weather.weatherdatacollect.vo.WeatherInfo;
 import cn.baron.weather.weatherdatacollect.weather.WeatherUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -25,12 +24,6 @@ public class WeatherServiceImpl implements WeatherService{
     @Resource
     private WeatherInfoMapper weatherInfoMapper;
 
-    /**
-     * 启动项目的时候，会把这个属性加载到spring 容器里
-     */
-    @Value("${server.port}")
-    private  String arr;
-
     @Override
     public Integer insertList(String cityName) {
         if(StringUtils.isEmpty(cityName)){
@@ -38,10 +31,6 @@ public class WeatherServiceImpl implements WeatherService{
             return 0;
         }
         String info = WeatherUtils.getWeatherData(cityName);
-        if (null == info){
-            log.error("无效的城市 key={}",cityName);
-            return 0;
-        }
         List<WeatherInfo> weatherInfos = WeatherUtils.getWeather(info);
         if (null == weatherInfos){
             log.error("无效的城市 key={}",cityName);
@@ -67,10 +56,6 @@ public class WeatherServiceImpl implements WeatherService{
             return 0;
         }
         String info = WeatherUtils.getWeatherData(cityName);
-        if (null == info){
-            log.error("无效的城市 key={}",cityName);
-            return 0;
-        }
         List<WeatherInfo> weatherInfos = WeatherUtils.getWeather(info);
         if (null == weatherInfos){
             log.error("无效的城市 key={}",cityName);
@@ -108,7 +93,7 @@ public class WeatherServiceImpl implements WeatherService{
         if(null != weatherInfo){
             return weatherInfoMapper.updateOne(weatherInfo);
         }
-        log.info("参数 weatherInfo 非法，weatherInfo={}",weatherInfo);
+        log.info("参数 weatherInfo 非法，weatherInfo={}", (Object) null);
         return 0;
     }
 

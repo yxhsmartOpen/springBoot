@@ -9,10 +9,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 条件装配
  * @author Baron
  * @date 2020/12/17 11:19
  */
-@ConditionalOnClass(Redisson.class) //条件装配
+@ConditionalOnClass(Redisson.class)
 @EnableConfigurationProperties(RedissonProperties.class)
 @Configuration
 public class RedissonAutoConfiguration {

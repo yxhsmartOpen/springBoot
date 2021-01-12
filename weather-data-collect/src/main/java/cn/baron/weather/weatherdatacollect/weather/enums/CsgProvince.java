@@ -1,13 +1,9 @@
 package cn.baron.weather.weatherdatacollect.weather.enums;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
- * 南方五省全局天气枚举工具类
- * 
+ * @Dsecription 南方五省全局天气枚举工具类
  * @author Baron
  * @date  2017-3-25
  */
@@ -29,16 +25,16 @@ public enum CsgProvince {
 	ShenZhen("SHENZHEN", "深圳", City.ShenZhenCity);
 
 	/** 省拼音 */
-	private String code;
+	private final String code;
 	/** 中文名称 */
-	private String name;
+	private final String name;
 	/** 城市 */
-	private List<String> city;
+	private final List<String> city;
 
 	/** 字段map */
 	private static Map<String, CsgProvince> map;
 
-	private CsgProvince(String code, String name, List<String> city) {
+	CsgProvince(String code, String name, List<String> city) {
 		this.code = code;
 		this.name = name;
 		this.city = city;
@@ -78,8 +74,8 @@ public enum CsgProvince {
 	}
 
 	public static class City {
-		public static List<String> GuangZhouCity = Arrays.asList("广州");
-		public static List<String> ShenZhenCity = Arrays.asList("深圳");
+		public static List<String> GuangZhouCity = Collections.singletonList("广州");
+		public static List<String> ShenZhenCity = Collections.singletonList("深圳");
 		public static List<String> GuangDongCity = Arrays.asList("", "东莞", "潮州", "佛山", "河源", "惠州", "江门", "揭阳", "梅州", "茂名", "清远", "韶关", "汕尾", "汕头", "云浮", "阳江", "珠海", "中山", "肇庆",
 				"湛江");
 		public static List<String> HaiNanCity = Arrays

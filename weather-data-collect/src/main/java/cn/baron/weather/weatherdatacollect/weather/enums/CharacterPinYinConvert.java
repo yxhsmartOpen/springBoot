@@ -6,10 +6,12 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * @Dsecription 拼音工具类
  * @author Baron
  * @date 2020/9/13 6:53
  */
@@ -17,10 +19,10 @@ public class CharacterPinYinConvert {
     /**
      * 设置汉字拼音输出的格式
      **/
-    HanyuPinyinOutputFormat format = null;
+    HanyuPinyinOutputFormat format;
 
     /**
-     * 默认构造方法，初始化汉字拼音输出格式
+     * @Dsecription  默认构造方法，初始化汉字拼音输出格式
      */
     public CharacterPinYinConvert() {
         // 设置汉字拼音输出的格式
@@ -38,10 +40,9 @@ public class CharacterPinYinConvert {
     }
 
     /**
-     * 汉字转拼音
-     *
+     * @Dsecription  汉字转拼音
      * @param text 待转换字符串
-     * @return allPinYin
+     * @return String 返回拼音字符串
      */
     public String toPinYin(String text) {
         StringBuilder allPinYin = new StringBuilder();
@@ -57,9 +58,9 @@ public class CharacterPinYinConvert {
 
                     if (pinYin != null) {
                         // 把拼音的首字母改为大写，例如：BeiJing
-                        allPinYin.append(pinYin.substring(0, 1).toUpperCase()).append(pinYin.substring(1, pinYin.length()));
+                        allPinYin.append(pinYin.substring(0, 1).toUpperCase()).append(pinYin.substring(1));
                     }
-                } catch (Exception e) {
+                } catch (Exception ignored) {
                 }
             } else if (((int) wordChar >= 65 && (int) wordChar <= 90) || ((int) wordChar >= 97 && (int) wordChar <= 122)) {
                 allPinYin.append(wordChar);
@@ -69,10 +70,9 @@ public class CharacterPinYinConvert {
     }
 
     /**
-     * 汉字转拼音
-     *
+     * @Dsecription  汉字转拼音
      * @param text 待转换字符串
-     * @return pinYinSet
+     * @return Set<String> 返回有序集合
      */
     public Set<String> toPinYins(String text) {
         char[] srcChar = text.toCharArray();
@@ -83,7 +83,7 @@ public class CharacterPinYinConvert {
             if (String.valueOf(c).matches("[\\u4E00-\\u9FA5]")) {
                 try {
                     temp[i] = PinyinHelper.toHanyuPinyinStringArray(srcChar[i], format);
-                } catch (Exception e) {
+                } catch (Exception ignored) {
                 }
             } else if (((int) c >= 65 && (int) c <= 90) || ((int) c >= 97 && (int) c <= 122)) {
                 temp[i] = new String[]{String.valueOf(srcChar[i])};
@@ -92,17 +92,15 @@ public class CharacterPinYinConvert {
             }
         }
         String[] pingyinArray = doExchange(temp)[0];
-        Set<String> pinyinSet = new HashSet<String>();
-        for (int i = 0; i < pingyinArray.length; i++) {
-            pinyinSet.add(pingyinArray[i]);
-        }
+        Set<String> pinyinSet = new HashSet<>();
+        Collections.addAll(pinyinSet, pingyinArray);
         return pinyinSet;
     }
 
     /**
-     * 处理转换
-     *
-     * @return
+     * @Dsecription 处理转换
+     * @param strJaggedArray 二维数组
+     * @return String[][] 返回二维数组
      */
     private String[][] doExchange(String[][] strJaggedArray) {
         int len = strJaggedArray.length;
@@ -119,9 +117,7 @@ public class CharacterPinYinConvert {
                 }
             }
             String[][] newArray = new String[len - 1][];
-            for (int i = 2; i < len; i++) {
-                newArray[i - 1] = strJaggedArray[i];
-            }
+            System.arraycopy(strJaggedArray, 2, newArray, 1, len - 2);
             newArray[0] = temp;
             return doExchange(newArray);
         }
@@ -133,7 +129,6 @@ public class CharacterPinYinConvert {
         CharacterPinYinConvert convert = new CharacterPinYinConvert();
         String name = "北京";
         System.out.println(convert.toPinYin(name));
-        //System.out.println(convert.toPinYins(name));
         String muti = "广西壮族自治区";
         System.out.println(convert.toPinYin(muti));
     }

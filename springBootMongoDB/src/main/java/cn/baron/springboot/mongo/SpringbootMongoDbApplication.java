@@ -49,7 +49,6 @@ public class SpringbootMongoDbApplication implements ApplicationRunner {
 				.createTime(new Date())
 				.updateTime(new Date()).build();
 
-
 		Coffee save = mongoTemplate.save(espresso);
 		log.info("Coffee {}",save);
 

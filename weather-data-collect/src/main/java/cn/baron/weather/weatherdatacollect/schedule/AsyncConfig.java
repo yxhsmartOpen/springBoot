@@ -17,17 +17,17 @@ import java.util.concurrent.Executor;
 @Slf4j
 public class AsyncConfig {
 
-    /*
-   此处成员变量应该使用@Value从配置中读取
-    */
-    private int corePoolSize = 10;
-    private int maxPoolSize = 200;
-    private int queueCapacity = 10;
     @Bean
     public Executor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        /*
+   此处成员变量应该使用@Value从配置中读取
+    */
+        int corePoolSize = 10;
         executor.setCorePoolSize(corePoolSize);
+        int maxPoolSize = 200;
         executor.setMaxPoolSize(maxPoolSize);
+        int queueCapacity = 10;
         executor.setQueueCapacity(queueCapacity);
         executor.initialize();
         return executor;
