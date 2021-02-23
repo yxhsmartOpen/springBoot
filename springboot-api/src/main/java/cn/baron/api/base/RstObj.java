@@ -3,7 +3,7 @@ package cn.baron.api.base;
 import java.io.Serializable;
 
 /**
- * 通用接口返回对象
+ * @Dsecription 通用接口返回对象
  * @author Baron
  * @date 2020/08/08
  * @param <T>

@@ -4,8 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 设备类型枚举
- * 
+ * @Dsecription 设备类型枚举
  * @author Baron
  * @since 2020/08/07
  *

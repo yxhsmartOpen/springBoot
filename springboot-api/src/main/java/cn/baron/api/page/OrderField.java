@@ -7,8 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 排序字段
- * 
+ * @Dsecription 排序字段
  * @author Baron
  * @date 2020/08/08
  */
@@ -17,7 +16,7 @@ public class OrderField implements Serializable {
 	private static final long serialVersionUID = 5363359835416617843L;
 
 	/** sql注入正则 */
-	private static Pattern SQL_ILLEGAL_PATTERN = Pattern.compile("[\\s\\(\\)',]");
+	private static final Pattern SQL_ILLEGAL_PATTERN = Pattern.compile("[\\s\\(\\)',]");
 
 	/** 倒序 */
 	public static final String DESC = "DESC";
@@ -32,7 +31,7 @@ public class OrderField implements Serializable {
 	/** 正序 */
 	public static final String ASC_NULLS_LAST = "ASC NULLS LAST";
 
-	private static Set<String> ORDER_SET = new HashSet<String>(6);
+	private static final Set<String> ORDER_SET = new HashSet<>(6);
 	static {
 		ORDER_SET.add(DESC);
 		ORDER_SET.add(DESC_NULLS_FIRST);

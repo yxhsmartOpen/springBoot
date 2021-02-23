@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 基础模型
+ * @Dsecription  基础模型
  * @author  Baron
  * @date 2020/08/07
  */

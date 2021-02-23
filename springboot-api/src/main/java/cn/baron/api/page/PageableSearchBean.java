@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 提供分页辅助bean
- * 
+ * @Dsecription 提供分页辅助bean
  * @author macong
- *
  *         日期：2015年8月30日
  */
 public class PageableSearchBean extends PageableBean implements Serializable {

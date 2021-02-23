@@ -1,8 +1,7 @@
 package cn.baron.api.enums;
 
 /**
- * api响应状态枚举
- * 
+ * @Dsecription api响应状态枚举
  * @author Baron
  * @date 2020/08/07
  */

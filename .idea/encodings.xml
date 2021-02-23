@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Socket-Demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/application.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/mapper/db1" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/mapper/db2" charset="GBK" />
     <file url="file://$PROJECT_DIR$/redisson-spring-boot-stater/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redisson-spring-boot-stater/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springBoot-MyBatis-Druid-MySQL/src/main/java" charset="UTF-8" />
@@ -8,12 +13,14 @@
     <file url="file://$PROJECT_DIR$/springBootMongoDB/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springBootMongoDBRepository/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-multi-datasource-h2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-performance-aspect/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-quartz/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-reactive-mongo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-reactive-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-redis-lock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/weather-data-collect/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xxl-job-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xxl-job-admin/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

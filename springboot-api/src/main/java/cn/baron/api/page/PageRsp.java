@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * 分页返回数据类 用于datatables组件
- * 
+ * @Dsecription 分页返回数据类 用于datatables组件
  * @author macong
  *
  *         日期：2015年11月30日

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-quartz:war">
+    <output-path>$PROJECT_DIR$/spring-quartz/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>spring-quartz</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="spring_quartz.war">
+      <element id="artifact" artifact-name="spring-quartz:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/reddion-spring-boot-stater" />
+    <file type="web" url="file://$PROJECT_DIR$/Socket-Demo" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-quartz" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

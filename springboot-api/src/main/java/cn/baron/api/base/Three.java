@@ -3,8 +3,7 @@ package cn.baron.api.base;
 import java.io.Serializable;
 
 /**
- * 键值对
- *
+ * @Dsecription 键值对
  * @author Baron
  * @date 2020/08/08
  * @param <A>

@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" filepath="$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" filepath="$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" filepath="$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" />
       <module fileurl="file://$PROJECT_DIR$/redisson-spring-boot-stater/redisson-spring-boot-stater.iml" filepath="$PROJECT_DIR$/redisson-spring-boot-stater/redisson-spring-boot-stater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-quartz/spring-quartz.iml" filepath="$PROJECT_DIR$/spring-quartz/spring-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot-MyBatis-Druid-MySQL/springBoot-MyBatis-Druid-MySQL.iml" filepath="$PROJECT_DIR$/springBoot-MyBatis-Druid-MySQL/springBoot-MyBatis-Druid-MySQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot-Redis-Hibernate-h2/springBoot-Redis-Hibernate-h2.iml" filepath="$PROJECT_DIR$/springBoot-Redis-Hibernate-h2/springBoot-Redis-Hibernate-h2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springBoot-family.iml" filepath="$PROJECT_DIR$/.idea/springBoot-family.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBootMongoDB/springBootMongoDB.iml" filepath="$PROJECT_DIR$/springBootMongoDB/springBootMongoDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBootMongoDBRepository/springBootMongoDBRepository.iml" filepath="$PROJECT_DIR$/springBootMongoDBRepository/springBootMongoDBRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-api/springboot-api.iml" filepath="$PROJECT_DIR$/springboot-api/springboot-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springboot-multi-datasource-h2/springboot-multi-datasource-h2.iml" filepath="$PROJECT_DIR$/springboot-multi-datasource-h2/springboot-multi-datasource-h2.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-performance-aspect/springboot-performance-aspect.iml" filepath="$PROJECT_DIR$/springboot-performance-aspect/springboot-performance-aspect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-quartz/springboot-quartz.iml" filepath="$PROJECT_DIR$/springboot-quartz/springboot-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-reactive-mongo/springboot-reactive-mongo.iml" filepath="$PROJECT_DIR$/springboot-reactive-mongo/springboot-reactive-mongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-reactive-redis/springboot-reactive-redis.iml" filepath="$PROJECT_DIR$/springboot-reactive-redis/springboot-reactive-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-redis-lock/springboot-redis-lock.iml" filepath="$PROJECT_DIR$/springboot-redis-lock/springboot-redis-lock.iml" />
       <module fileurl="file://$PROJECT_DIR$/weather-data-collect/weather-data-collect.iml" filepath="$PROJECT_DIR$/weather-data-collect/weather-data-collect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxl-job-admin/xxl-job-admin.iml" filepath="$PROJECT_DIR$/xxl-job-admin/xxl-job-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxl-job-executor/xxl-job-executor.iml" filepath="$PROJECT_DIR$/xxl-job-executor/xxl-job-executor.iml" />
     </modules>
   </component>
 </project>

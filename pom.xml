@@ -20,7 +20,7 @@
         <module>springBootMongoDBRepository</module>
         <module>springBoot-Redis-Hibernate-h2</module>
         <module>springBoot-MyBatis-Druid-MySQL</module>
-        <module>springboot-multi-datasource-h2</module>
+        <module>mybatis-druid-multi-datasource</module>
         <module>springboot-api</module>
         <module>springboot-reactive-redis</module>
         <module>springboot-reactive-mongo</module>
@@ -28,6 +28,12 @@
         <module>springboot-redis-lock</module>
         <module>redisson-spring-boot-stater</module>
         <module>weather-data-collect</module>
+        <module>Socket-Demo</module>
+        <module>springboot-quartz</module>
+        <module>spring-quartz</module>
+        <module>quartz-standalone</module>
+        <module>xxl-job-admin</module>
+        <module>xxl-job-executor</module>
     </modules>
 
     <properties>
