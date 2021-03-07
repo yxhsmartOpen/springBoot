@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/Socket-Demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/application.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/banner.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/mapper/db1" charset="GBK" />
     <file url="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/src/main/resources/mapper/db2" charset="GBK" />
     <file url="file://$PROJECT_DIR$/redisson-spring-boot-stater/src/main/java" charset="UTF-8" />

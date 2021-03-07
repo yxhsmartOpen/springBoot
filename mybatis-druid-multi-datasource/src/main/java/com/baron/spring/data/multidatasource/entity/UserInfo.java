@@ -13,7 +13,6 @@ import java.util.Date;
  * 人员信息实体类
  *
  * @author yangxuanhua
- * @date 2021-02-22 23:08:13
  */
 @Data
 @AllArgsConstructor
@@ -23,53 +22,24 @@ public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 自增主键id
-     */
+    /** 自增主键id */
     private Integer id;
-
-    /**
-     * 人员id
-     */
+    /** 人员id */
     private String userId;
-
-    /**
-     * 用户名
-     */
+    /** 用户名 */
     private String userName;
-
-    /**
-     * 密码
-     */
+    /** 密码 */
     private String userPassword;
-
-    /**
-     * 真实姓名
-     */
+    /** 真实姓名 */
     private String realName;
-
-    /**
-     * 手机号
-     */
+    /** 手机号 */
     private String mobile;
-
-    /**
-     * 创建时间
-     */
+    /** 创建时间 */
     private Date createTime;
-
-    /**
-     * 修改时间
-     */
+    /** 修改时间 */
     private Date updateTime;
-
-    /**
-     * 删除标记
-     */
+    /** 删除标记 */
     private Integer delFlag;
-
-    /**
-     * remark
-     */
+    /** remark */
     private String remark;
 }

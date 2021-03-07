@@ -12,6 +12,7 @@ import java.util.List;
  * 人员信息mapper接口
  *
  * @author yangxuanhua
+ * @date 2021-02-22 23:10:08
  */
 @Mapper
 public interface UserInfo1Mapper {

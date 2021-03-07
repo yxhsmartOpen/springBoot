@@ -16,6 +16,7 @@ import java.util.Map;
  * 人员信息接口
  *
  * @author yangxuanhua
+ * @date 2021-02-22 23:10:08
  */
 @RestController
 @RequestMapping("/user")
@@ -35,7 +36,7 @@ public class UserInfoController {
      */
     @PostMapping("/list-all")
     public Map<String, Object> getAllUser() {
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<>(2);
         result.put("DB1-USERS", userInfo1Mapper.listAll());
         result.put("DB2-USERS", userInfo2Mapper.listAll());
         return result;

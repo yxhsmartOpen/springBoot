@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * 数据源2 >  配置
  *
  * @author yangxuanhua
- * @date 2021-02-22
+ * @date 2021-02-22 23:10:08
  * 说明一下两个注解的作用
  * -- @Primary：在众多相同的bean中，优先选择用@Primary注解的bean（该注解加在各个bean上）
  * -- @Qualifier：在众多相同的bean中，@Qualifier指定需要注入的bean（该注解跟随在@Autowired后）
@@ -71,5 +71,11 @@ public class DataSource2Config {
     public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("test2SqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
-
+    public static void main(String[] args) {
+        int a = 43,b = 20;
+        if (a < b)
+            System.out.println(0);
+        else
+            System.out.println(a % b);
+    }
 }
