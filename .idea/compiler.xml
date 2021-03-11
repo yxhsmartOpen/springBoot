@@ -7,13 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mongo" />
         <module name="quartz-standalone" />
         <module name="mybatis-druid-multi-datasource" />
         <module name="springBoot-Redis-Hibernate-h2" />
         <module name="Socket-Demo" />
-        <module name="springBootMongoDB" />
         <module name="spring-quartz" />
+        <module name="springBootMongoDB" />
         <module name="springboot-reactive-mongo" />
+        <module name="redis" />
         <module name="springboot-performance-aspect" />
         <module name="reddion-spring-boot-stater" />
         <module name="xxl-job-executor" />
@@ -26,11 +28,14 @@
         <module name="redisson-spring-boot-stater" />
         <module name="weather-data-collect" />
         <module name="springboot-quartz" />
+        <module name="unzipandunzrar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mongo" target="1.8" />
       <module name="mybatis-druid-multi-datasource" target="1.8" />
       <module name="quartz-standalone" target="1.5" />
+      <module name="redis" target="8" />
       <module name="redisson-spring-boot-stater" target="1.8" />
       <module name="Socket-Demo" target="1.8" />
       <module name="spring-quartz" target="1.5" />
@@ -40,11 +45,12 @@
       <module name="springboot-performance-aspect" target="1.8" />
       <module name="springboot-quartz" target="1.8" />
       <module name="springboot-reactive-mongo" target="1.8" />
-      <module name="springboot-reactive-redis" target="1.8" />
-      <module name="springBoot-Redis-Hibernate-h2" target="1.8" />
-      <module name="springboot-redis-lock" target="1.8" />
+      <module name="springboot-reactive-redis" target="8" />
+      <module name="springBoot-Redis-Hibernate-h2" target="8" />
+      <module name="springboot-redis-lock" target="8" />
       <module name="springBootMongoDB" target="1.8" />
       <module name="springBootMongoDBRepository" target="1.8" />
+      <module name="unzipandunzrar" target="1.8" />
       <module name="weather-data-collect" target="1.8" />
       <module name="xxl-job-admin" target="1.8" />
       <module name="xxl-job-executor" target="1.5" />
@@ -53,7 +59,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Socket-Demo" options="-parameters" />
+      <module name="mongo" options="-parameters" />
       <module name="mybatis-druid-multi-datasource" options="-parameters" />
+      <module name="redis" options="-parameters" />
       <module name="redisson-spring-boot-stater" options="" />
       <module name="springBoot-MyBatis-Druid-MySQL" options="-parameters" />
       <module name="springBoot-Redis-Hibernate-h2" options="-parameters" />
@@ -66,6 +74,7 @@
       <module name="springboot-reactive-mongo" options="-parameters" />
       <module name="springboot-reactive-redis" options="-parameters" />
       <module name="springboot-redis-lock" options="-parameters" />
+      <module name="unzipandunzrar" options="-parameters" />
       <module name="weather-data-collect" options="-parameters" />
     </option>
   </component>
