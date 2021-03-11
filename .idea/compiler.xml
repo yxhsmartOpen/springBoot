@@ -18,17 +18,18 @@
         <module name="redis" />
         <module name="springboot-performance-aspect" />
         <module name="reddion-spring-boot-stater" />
+        <module name="springmongo" />
         <module name="xxl-job-executor" />
         <module name="springboot-api" />
         <module name="springboot-reactive-redis" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
         <module name="xxl-job-admin" />
-        <module name="springBootMongoDBRepository" />
-        <module name="springboot-redis-lock" />
         <module name="redisson-spring-boot-stater" />
         <module name="weather-data-collect" />
         <module name="springboot-quartz" />
         <module name="unzipandunzrar" />
+        <module name="springboot-redis-lock" />
+        <module name="springBootMongoDBRepository" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -50,6 +51,7 @@
       <module name="springboot-redis-lock" target="8" />
       <module name="springBootMongoDB" target="1.8" />
       <module name="springBootMongoDBRepository" target="1.8" />
+      <module name="springmongo" target="1.7" />
       <module name="unzipandunzrar" target="1.8" />
       <module name="weather-data-collect" target="1.8" />
       <module name="xxl-job-admin" target="1.8" />
@@ -74,6 +76,7 @@
       <module name="springboot-reactive-mongo" options="-parameters" />
       <module name="springboot-reactive-redis" options="-parameters" />
       <module name="springboot-redis-lock" options="-parameters" />
+      <module name="springmongo" options="" />
       <module name="unzipandunzrar" options="-parameters" />
       <module name="weather-data-collect" options="-parameters" />
     </option>

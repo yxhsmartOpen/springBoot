@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/unzipandunzrar/pom.xml" />
         <option value="$PROJECT_DIR$/mongo/pom.xml" />
         <option value="$PROJECT_DIR$/mongo/springBootMongoDB/pom.xml" />
+        <option value="$PROJECT_DIR$/mongo/springmongo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -16,6 +16,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.LookupOperation;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -24,6 +26,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yangxuanhua
@@ -46,7 +49,31 @@ public class SpringbootMongoDbApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		test();
+		test1();
+	}
 
+	/**
+	 * 双表关联查询
+	 */
+	private void test1() {
+		LookupOperation lookupOperation = LookupOperation.newLookup()
+				.from("inventory")
+				.localField("item")
+				.foreignField("sku")
+				.as("inventory_docs");
+		Aggregation aggregation = Aggregation.newAggregation(lookupOperation);
+		List<Map> results =  mongoTemplate.aggregate(aggregation,"orders",Map.class).getMappedResults();
+		log.info(results.size()+"");
+		for (Map map : results) {
+			log.info("map : {}", map);
+		}
+		for (Map result : results) {
+			log.info("key = {} , value = {} ",result.keySet(),result.values());
+		}
+	}
+
+	private void test() throws Exception {
 		Coffee espresso = Coffee.builder()
 				.name("espresso")
 				.price(Money.ofMajor(CurrencyUnit.of("CNY"), 20L))
@@ -65,10 +92,10 @@ public class SpringbootMongoDbApplication implements ApplicationRunner {
 		log.info("Find {} Coffee", list.size());
 		list.forEach(c -> log.info("Coffee {}", c));
 
-        // 为了看更新时间
+		// 为了看更新时间
 		Thread.sleep(1000);
 		UpdateResult result = mongoTemplate.updateFirst(Query.query(Criteria.where("name").is("espresso")),
-				new Update().set("price",Money.ofMajor(CurrencyUnit.of("CNY"), 30)).currentDate("updateTime"),
+				new Update().set("price", Money.ofMajor(CurrencyUnit.of("CNY"), 30)).currentDate("updateTime"),
 				Coffee.class);
 		log.info("Update result {}",result.getModifiedCount());
 		Coffee updateOne = mongoTemplate.findById(save.getId(),Coffee.class);

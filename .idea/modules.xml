@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/mongo/springboot-reactive-mongo/springboot-reactive-mongo.iml" filepath="$PROJECT_DIR$/mongo/springboot-reactive-mongo/springboot-reactive-mongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/springboot-reactive-redis/springboot-reactive-redis.iml" filepath="$PROJECT_DIR$/redis/springboot-reactive-redis/springboot-reactive-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/springboot-redis-lock/springboot-redis-lock.iml" filepath="$PROJECT_DIR$/redis/springboot-redis-lock/springboot-redis-lock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongo/springmongo/springmongo.iml" filepath="$PROJECT_DIR$/mongo/springmongo/springmongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/unzipandunzrar/unzipandunzrar.iml" filepath="$PROJECT_DIR$/unzipandunzrar/unzipandunzrar.iml" />
       <module fileurl="file://$PROJECT_DIR$/weather-data-collect/weather-data-collect.iml" filepath="$PROJECT_DIR$/weather-data-collect/weather-data-collect.iml" />
       <module fileurl="file://$PROJECT_DIR$/xxl-job-admin/xxl-job-admin.iml" filepath="$PROJECT_DIR$/xxl-job-admin/xxl-job-admin.iml" />
