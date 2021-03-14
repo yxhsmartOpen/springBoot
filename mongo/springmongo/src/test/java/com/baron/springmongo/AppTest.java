@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -52,10 +54,15 @@ public class AppTest {
         System.out.println("执行成功");
     }
 
+    /**
+     * 查询集合user_info中字段为name，且那么字段的属性为2（字符串）的3条数据
+     */
     @Test
     public void queryList(){
-        
+        List<UserInfo> userInfos = mongoTemplate.find(
+                Query.query(Criteria.where("name").type(2)).limit(3),UserInfo.class);
+        for (UserInfo userInfo : userInfos) {
+            System.out.println("UserInfo "+userInfo.toString());
+        }
     }
-
-
 }
