@@ -2,10 +2,10 @@ package com.baron.io.netty.tomcat.bio.http;
 
 import java.io.OutputStream;
 
-public class GPResponse {
+public class BaronResponseBio {
     private OutputStream out;
 
-    public GPResponse(OutputStream os) {
+    public BaronResponseBio(OutputStream os) {
         this.out = os;
     }
 

@@ -4,12 +4,12 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
 
-public class GPResponse {
+public class BaronResponseNio {
 
     private ChannelHandlerContext ctx;
     private HttpRequest req;
 
-    public GPResponse(ChannelHandlerContext ctx, HttpRequest req) {
+    public BaronResponseNio(ChannelHandlerContext ctx, HttpRequest req) {
         this.ctx = ctx;
         this.req = req;
     }

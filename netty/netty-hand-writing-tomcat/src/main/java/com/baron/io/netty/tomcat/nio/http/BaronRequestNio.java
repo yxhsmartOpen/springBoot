@@ -11,12 +11,12 @@ import java.util.Map;
 /**
  * @author yangxuanhua
  */
-public class GPRequest {
+public class BaronRequestNio {
 
     private ChannelHandlerContext ctx;
     private HttpRequest req;
 
-    public GPRequest(ChannelHandlerContext ctx, HttpRequest req) {
+    public BaronRequestNio(ChannelHandlerContext ctx, HttpRequest req) {
         this.ctx = ctx;
         this.req = req;
     }

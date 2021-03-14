@@ -1,9 +1,9 @@
 package com.baron.io.netty.tomcat.nio;
 
 
-import com.baron.io.netty.tomcat.nio.http.GPRequest;
-import com.baron.io.netty.tomcat.nio.http.GPResponse;
-import com.baron.io.netty.tomcat.nio.http.GPServlet;
+import com.baron.io.netty.tomcat.nio.http.BaronRequestNio;
+import com.baron.io.netty.tomcat.nio.http.BaronResponseNio;
+import com.baron.io.netty.tomcat.nio.http.AbstractBaronServletNio;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -16,7 +16,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class GPTomcat {
+/**
+ * @author yangxuanhua
+ */
+public class BaronTomcatBio {
 
     private int port = 8080;
 
@@ -24,10 +27,10 @@ public class GPTomcat {
 
     private Properties webxml = new Properties();
 
-    private Map<String, GPServlet> servletMapping = new HashMap<>();
+    private Map<String, AbstractBaronServletNio> servletMapping = new HashMap<>();
 
     public static void main(String[] args) {
-        new GPTomcat().start();
+        new BaronTomcatBio().start();
     }
 
     //Tomcat的启动入口
@@ -107,7 +110,7 @@ public class GPTomcat {
                     String className = webxml.getProperty(servletName + ".className");
 
                     //反射创建Servlet的实例
-                    GPServlet obj = (GPServlet) Class.forName(className).newInstance();
+                    AbstractBaronServletNio obj = (AbstractBaronServletNio) Class.forName(className).newInstance();
                     //将URL和Servlet建立映射关系
                     servletMapping.put(url,obj);
                 }
@@ -126,8 +129,8 @@ public class GPTomcat {
             if(msg instanceof HttpRequest){
                 HttpRequest req = (HttpRequest) msg;
 
-                GPRequest request = new GPRequest(ctx,req);
-                GPResponse response = new GPResponse(ctx,req);
+                BaronRequestNio request = new BaronRequestNio(ctx,req);
+                BaronResponseNio response = new BaronResponseNio(ctx,req);
 
                 String url = request.getUrl();
 

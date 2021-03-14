@@ -2,9 +2,9 @@ package com.baron.io.netty.tomcat.bio;
 
 
 
-import com.baron.io.netty.tomcat.bio.http.GPRequest;
-import com.baron.io.netty.tomcat.bio.http.GPResponse;
-import com.baron.io.netty.tomcat.bio.http.GPServlet;
+import com.baron.io.netty.tomcat.bio.http.BaronRequestBio;
+import com.baron.io.netty.tomcat.bio.http.BaronResponseBio;
+import com.baron.io.netty.tomcat.bio.http.AbstractBaronServletBio;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class GPTomcat {
+public class BaronTomcatBio {
 
     private int port = 8080;
 
@@ -23,10 +23,10 @@ public class GPTomcat {
 
     private Properties webxml = new Properties();
 
-    private Map<String, GPServlet> servletMapping = new HashMap<String,GPServlet>();
+    private Map<String, AbstractBaronServletBio> servletMapping = new HashMap<String, AbstractBaronServletBio>();
 
     public static void main(String[] args) {
-        new GPTomcat().start();
+        new BaronTomcatBio().start();
     }
 
     //Tomcat的启动入口
@@ -58,8 +58,8 @@ public class GPTomcat {
         InputStream is = client.getInputStream();
         OutputStream os = client.getOutputStream();
 
-        GPRequest request = new GPRequest(is);
-        GPResponse response = new GPResponse(os);
+        BaronRequestBio request = new BaronRequestBio(is);
+        BaronResponseBio response = new BaronResponseBio(os);
 
         String url = request.getUrl();
 
@@ -99,7 +99,7 @@ public class GPTomcat {
                     String className = webxml.getProperty(servletName + ".className");
 
                     //反射创建Servlet的实例
-                    GPServlet obj = (GPServlet) Class.forName(className).newInstance();
+                    AbstractBaronServletBio obj = (AbstractBaronServletBio) Class.forName(className).newInstance();
                     //将URL和Servlet建立映射关系
                     servletMapping.put(url,obj);
                 }

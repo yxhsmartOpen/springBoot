@@ -2,12 +2,15 @@ package com.baron.io.netty.tomcat.bio.http;
 
 import java.io.InputStream;
 
-public class GPRequest {
+/**
+ * @author yangxuanhua
+ */
+public class BaronRequestBio {
 
     private String method;
     private String url;
 
-    public GPRequest(InputStream is) {
+    public BaronRequestBio(InputStream is) {
 
         try {
             //拿到HTTP协议的具体内容
