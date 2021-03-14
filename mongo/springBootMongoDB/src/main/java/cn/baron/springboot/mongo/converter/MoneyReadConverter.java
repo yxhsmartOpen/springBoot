@@ -11,14 +11,17 @@ import org.springframework.stereotype.Component;
  * @date 2020/8/4 23:15
  */
 @Component
-public class MoneyReadConverter implements Converter<Document, Money> {
+public class MoneyReadConverter implements Converter<Object, Money> {
     @Override
-    public Money convert(Document source) {
-
-        Document money = (Document)source.get("money");
-        double amount = Double.parseDouble(money.getString("amount"));
-        String currency  = ((Document)money.get("currency")).getString("code");
-
-        return Money.of(CurrencyUnit.of(currency), amount);
+    public Money convert(Object source) {
+        if (source instanceof Long){
+            return Money.ofMajor(CurrencyUnit.of("CNY"), (Long) source);
+        }else if (source instanceof Document){
+            org.bson.Document money = (org.bson.Document)((org.bson.Document)source).get("money");
+            double amount = Double.parseDouble(money.getString("amount"));
+            String currency  = ((org.bson.Document)money.get("currency")).getString("code");
+            return Money.of(CurrencyUnit.of(currency), amount);
+        }
+        return null;
     }
 }

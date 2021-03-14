@@ -17,7 +17,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
+import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -51,6 +53,26 @@ public class SpringbootMongoDbApplication implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		test();
 		test1();
+		test2();
+	}
+
+	/**
+	 * 双表关联查询
+	 */
+	private void test2() {
+		LookupOperation lookupToLots = LookupOperation.newLookup().
+				//关联表名 inventory
+				from("inventory").
+				//关联字段 item
+				localField("item").
+				//主表关联字段对应的次表字段
+				foreignField("sku").
+				//查询结果集合名
+				as("inventory_docs");
+		List<Map> results =  mongoTemplate.aggregate(Aggregation.newAggregation(lookupToLots),
+				"orders",Map.class).getMappedResults();
+		results.forEach(map -> {log.info("map : {}",map.keySet());});
+		results.forEach(map -> {log.info("map : {}",map.toString());});
 	}
 
 	/**
@@ -83,9 +105,9 @@ public class SpringbootMongoDbApplication implements ApplicationRunner {
 		Coffee save = mongoTemplate.save(espresso);
 		log.info("Coffee {}",save);
 
-//		List<Coffee> list11 = mongoTemplate.findAll(Coffee.class);
-//		log.info("Find {} Coffee", list11.size());
-//		list11.forEach(c -> log.info("Coffee {}", c));
+		List<Coffee> list11 = mongoTemplate.findAll(Coffee.class);
+		log.info("Find {} Coffee", list11.size());
+		list11.forEach(c -> log.info("Coffee {}", c));
 
 		List<Coffee> list = mongoTemplate.find(Query.query(Criteria.where("name").is("espresso").
 				andOperator(Criteria.where("price.money.amount").is("30.00"))),Coffee.class);

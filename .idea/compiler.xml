@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mongo" />
         <module name="quartz-standalone" />
         <module name="mybatis-druid-multi-datasource" />
         <module name="springBoot-Redis-Hibernate-h2" />
@@ -15,7 +14,6 @@
         <module name="spring-quartz" />
         <module name="springBootMongoDB" />
         <module name="springboot-reactive-mongo" />
-        <module name="redis" />
         <module name="springboot-performance-aspect" />
         <module name="reddion-spring-boot-stater" />
         <module name="springmongo" />
@@ -24,12 +22,13 @@
         <module name="springboot-reactive-redis" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
         <module name="xxl-job-admin" />
+        <module name="springmongodb" />
         <module name="redisson-spring-boot-stater" />
-        <module name="weather-data-collect" />
         <module name="springboot-quartz" />
-        <module name="unzipandunzrar" />
         <module name="springboot-redis-lock" />
+        <module name="weather-data-collect" />
         <module name="springBootMongoDBRepository" />
+        <module name="unzipandunzrar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -52,6 +51,7 @@
       <module name="springBootMongoDB" target="1.8" />
       <module name="springBootMongoDBRepository" target="1.8" />
       <module name="springmongo" target="1.7" />
+      <module name="springmongodb" target="1.7" />
       <module name="unzipandunzrar" target="1.8" />
       <module name="weather-data-collect" target="1.8" />
       <module name="xxl-job-admin" target="1.8" />

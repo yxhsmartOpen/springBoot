@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class})
 @Slf4j
 public class MultiDataSourceDemoApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(MultiDataSourceDemoApplication.class, args);
     }
