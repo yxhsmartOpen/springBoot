@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>netty-hand-writing-tomcat</module>
+    <module>netty-hand-writing-rpc</module>
   </modules>
 
   <name>netty</name>
