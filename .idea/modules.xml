@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" filepath="$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo/mongo.iml" filepath="$PROJECT_DIR$/mongo/mongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" filepath="$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty/netty-hand-writing-tomcat/netty-hand-writing-tomcat.iml" filepath="$PROJECT_DIR$/netty/netty-hand-writing-tomcat/netty-hand-writing-tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" filepath="$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/redisson-spring-boot-stater/redisson-spring-boot-stater.iml" filepath="$PROJECT_DIR$/redisson-spring-boot-stater/redisson-spring-boot-stater.iml" />

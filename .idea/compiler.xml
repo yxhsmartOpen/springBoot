@@ -8,26 +8,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="quartz-standalone" />
-        <module name="mybatis-druid-multi-datasource" />
         <module name="springBoot-Redis-Hibernate-h2" />
+        <module name="netty-hand-writing-tomcat" />
         <module name="Socket-Demo" />
-        <module name="spring-quartz" />
-        <module name="springBootMongoDB" />
         <module name="springboot-reactive-mongo" />
         <module name="springboot-performance-aspect" />
-        <module name="reddion-spring-boot-stater" />
         <module name="springmongo" />
         <module name="xxl-job-executor" />
         <module name="springboot-api" />
         <module name="springboot-reactive-redis" />
-        <module name="kafka-springboot" />
-        <module name="kafka-spring" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
         <module name="xxl-job-admin" />
+        <module name="springboot-redis-lock" />
+        <module name="mybatis-druid-multi-datasource" />
+        <module name="spring-quartz" />
+        <module name="springBootMongoDB" />
+        <module name="reddion-spring-boot-stater" />
+        <module name="kafka-springboot" />
+        <module name="kafka-spring" />
         <module name="springmongodb" />
         <module name="redisson-spring-boot-stater" />
         <module name="springboot-quartz" />
-        <module name="springboot-redis-lock" />
         <module name="springBootMongoDBRepository" />
         <module name="unzipandunzrar" />
         <module name="weather-data-collect" />
@@ -39,6 +40,8 @@
       <module name="kafka-springboot" target="1.8" />
       <module name="mongo" target="1.8" />
       <module name="mybatis-druid-multi-datasource" target="1.8" />
+      <module name="netty" target="1.7" />
+      <module name="netty-hand-writing-tomcat" target="1.8" />
       <module name="quartz-standalone" target="1.5" />
       <module name="redis" target="8" />
       <module name="redisson-spring-boot-stater" target="1.8" />
@@ -71,6 +74,7 @@
       <module name="kafka-springboot" options="-parameters" />
       <module name="mongo" options="-parameters" />
       <module name="mybatis-druid-multi-datasource" options="-parameters" />
+      <module name="netty" options="" />
       <module name="redis" options="-parameters" />
       <module name="redisson-spring-boot-stater" options="" />
       <module name="springBoot-MyBatis-Druid-MySQL" options="-parameters" />

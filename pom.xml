@@ -31,6 +31,7 @@
         <module>xxl-job-executor</module>
         <module>redis</module>
         <module>kafka</module>
+        <module>netty</module>
     </modules>
 
     <properties>

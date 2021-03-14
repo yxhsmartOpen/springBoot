@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/mongo/springmongo/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/kafka-spring/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/kafka-springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/netty/netty-hand-writing-tomcat/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
