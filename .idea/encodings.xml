@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/Socket-Demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka/kafka-spring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka/kafka-springboot/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mongo/springBootMongoDB/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mongo/springBootMongoDBRepository/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mongo/springboot-reactive-mongo/src/main/java" charset="UTF-8" />

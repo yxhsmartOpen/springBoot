@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/mongo/pom.xml" />
         <option value="$PROJECT_DIR$/mongo/springBootMongoDB/pom.xml" />
         <option value="$PROJECT_DIR$/mongo/springmongo/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/kafka-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/kafka-springboot/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

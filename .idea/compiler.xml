@@ -20,18 +20,23 @@
         <module name="xxl-job-executor" />
         <module name="springboot-api" />
         <module name="springboot-reactive-redis" />
+        <module name="kafka-springboot" />
+        <module name="kafka-spring" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
         <module name="xxl-job-admin" />
         <module name="springmongodb" />
         <module name="redisson-spring-boot-stater" />
         <module name="springboot-quartz" />
         <module name="springboot-redis-lock" />
-        <module name="weather-data-collect" />
         <module name="springBootMongoDBRepository" />
         <module name="unzipandunzrar" />
+        <module name="weather-data-collect" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="kafka" target="1.8" />
+      <module name="kafka-spring" target="8" />
+      <module name="kafka-springboot" target="1.8" />
       <module name="mongo" target="1.8" />
       <module name="mybatis-druid-multi-datasource" target="1.8" />
       <module name="quartz-standalone" target="1.5" />
@@ -61,6 +66,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Socket-Demo" options="-parameters" />
+      <module name="kafka" options="-parameters" />
+      <module name="kafka-spring" options="" />
+      <module name="kafka-springboot" options="-parameters" />
       <module name="mongo" options="-parameters" />
       <module name="mybatis-druid-multi-datasource" options="-parameters" />
       <module name="redis" options="-parameters" />

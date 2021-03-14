@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" filepath="$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka/kafka-spring/kafka-spring.iml" filepath="$PROJECT_DIR$/kafka/kafka-spring/kafka-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" filepath="$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo/mongo.iml" filepath="$PROJECT_DIR$/mongo/mongo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" filepath="$PROJECT_DIR$/mybatis-druid-multi-datasource/mybatis-druid-multi-datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" filepath="$PROJECT_DIR$/quartz-standalone/quartz-standalone.iml" />
@@ -11,7 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-quartz/spring-quartz.iml" filepath="$PROJECT_DIR$/spring-quartz/spring-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot-MyBatis-Druid-MySQL/springBoot-MyBatis-Druid-MySQL.iml" filepath="$PROJECT_DIR$/springBoot-MyBatis-Druid-MySQL/springBoot-MyBatis-Druid-MySQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/springBoot-Redis-Hibernate-h2/springBoot-Redis-Hibernate-h2.iml" filepath="$PROJECT_DIR$/redis/springBoot-Redis-Hibernate-h2/springBoot-Redis-Hibernate-h2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/springBoot-family.iml" filepath="$PROJECT_DIR$/.idea/springBoot-family.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springBoot-family.iml" filepath="$PROJECT_DIR$/springBoot-family.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo/springBootMongoDB/springBootMongoDB.iml" filepath="$PROJECT_DIR$/mongo/springBootMongoDB/springBootMongoDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo/springBootMongoDBRepository/springBootMongoDBRepository.iml" filepath="$PROJECT_DIR$/mongo/springBootMongoDBRepository/springBootMongoDBRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-api/springboot-api.iml" filepath="$PROJECT_DIR$/springboot-api/springboot-api.iml" />

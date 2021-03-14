@@ -1,10 +1,9 @@
 package com.baron.basis;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Baron
- * @date 2020/9/23 13:46
  */
 public class BasicDataTypeTest {
 
@@ -46,12 +45,6 @@ public class BasicDataTypeTest {
     /**
      * This method will always cache values in the range -128 to 127,
      * inclusive, and may cache other values outside of this range.
-     *
-     * @code{} public static Integer valueOf(int i) {
-     * if (i >= Integer.IntegerCache.low && i <= Integer.IntegerCache.high)
-     * return IntegerCache.cache[i + (-IntegerCache.low)];
-     * return new Integer(i);
-     * }
      */
     @Test
     public void testReference() {
@@ -121,11 +114,11 @@ public class BasicDataTypeTest {
      * 包装类与基本数据类型进行比较运算，是先将包装类进行拆箱成基本数据类型，然后进行比较的。
      */
     @Test
-    public void test1(){
+    public void test1() {
 
-        Integer a=1;
-        System.out.println(a==1?"等于":"不等于");
-        Boolean bool=false;
-        System.out.println(bool?"真":"假");
+        Integer a = 1;
+        System.out.println(a == 1 ? "等于" : "不等于");
+        Boolean bool = false;
+        System.out.println(bool ? "真" : "假");
     }
 }

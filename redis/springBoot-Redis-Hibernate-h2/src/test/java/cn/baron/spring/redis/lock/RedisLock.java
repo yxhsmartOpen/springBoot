@@ -30,7 +30,7 @@ class RedisWithReentrantLock {
         }
 
         private boolean _lock(String key) {
-            return jedis.set(key, "", "nx", "ex", 5L) != null;
+            return jedis.set(key, "nx") != null;
         }
 
         private void _unlock(String key) {

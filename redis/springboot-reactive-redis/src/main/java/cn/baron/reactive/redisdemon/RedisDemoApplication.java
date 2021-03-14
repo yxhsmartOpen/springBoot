@@ -2,6 +2,7 @@ package cn.baron.reactive.redisdemon;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,6 +23,7 @@ public class RedisDemoApplication implements ApplicationRunner {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Qualifier("reactiveStringRedisTemplate")
     @Autowired
     private ReactiveStringRedisTemplate redisTemplate;
 

@@ -4,7 +4,6 @@ import org.junit.Test;
 
 /**
  * @author Baron
- * @date 2020/9/23 13:53
  */
 public class BitOperationTest {
 
