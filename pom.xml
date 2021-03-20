@@ -32,6 +32,7 @@
         <module>redis</module>
         <module>kafka</module>
         <module>netty</module>
+        <module>nginx</module>
     </modules>
 
     <properties>

@@ -14,7 +14,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
  * @author yangxuanhua
  */
 public class RpcRegistry {
-    private int port;
+    private final int port;
     public RpcRegistry(int port) {
         this.port = port;
     }

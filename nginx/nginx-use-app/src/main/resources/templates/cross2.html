@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试ajax和跨域访问</title>
+    <link rel="icon" href="https://www.gupaoedu.cn/favorite.ico">
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function(){
+        /* 浏览器访问 http://192.168.44.181:7298/cross/get*/
+
+        /* 对浏览器来说，181:7298/cross和 181:7298/time 是同域 */
+        $.ajax({
+            type: "GET",
+            url: "http://192.168.71.128:7298/time/query/",
+            success: function(data) {
+                alert("successful! 跨域成功！");
+            },
+            error: function() {
+                alert("fail! 跨域失败!");
+            }
+        });
+    });
+</script>
+<body>
+    <h1>测试跨域访问</h1>
+</body>
+</html>

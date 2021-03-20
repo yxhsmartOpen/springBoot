@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试ajax和跨域访问</title>
+    <link rel="icon" href="https://www.gupaoedu.cn/favorite.ico">
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<script type="text/javascript" >
+    $(document).ready(function(){
+        /* 访问：http://192.168.44.1:9096/cross/get1 */
+        /* 对浏览器来说，请求源地址是 192.168.44.1:9096，和 192.168.44.181不同域 */
+        $.ajax({
+            url: "http://192.168.71.128/time/query",
+            type: "GET",
+            success: function(data) {
+                alert("successful! 跨域成功！");
+            },
+            error: function() {
+                alert("fail! 跨域失败!");
+            }
+        });
+    });
+</script>
+<body>
+    <h1>测试跨域访问</h1>
+</body>
+</html>
