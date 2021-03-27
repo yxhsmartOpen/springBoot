@@ -15,8 +15,8 @@ public class ProducerHandPartition {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Properties props=new Properties();
         String groupID="gp-test-group";
-        //props.put("bootstrap.servers","192.168.44.161:9093,192.168.44.161:9094,192.168.44.161:9095");
-        props.put("bootstrap.servers","192.168.44.160:9092");
+        props.put("bootstrap.servers","192.168.71.128:9093,192.168.71.128:9094,192.168.71.128:9095");
+        //props.put("bootstrap.servers","192.168.71.128:9092");
         props.put("group.id",groupID);
         props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer","org.apache.kafka.common.serialization.IntegerSerializer");

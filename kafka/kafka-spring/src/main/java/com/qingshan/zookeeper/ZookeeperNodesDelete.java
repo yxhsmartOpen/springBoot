@@ -15,7 +15,7 @@ public class ZookeeperNodesDelete {
 
         RetryPolicy retryPolicy  = new ExponentialBackoffRetry(1000,3);
         CuratorFramework client = CuratorFrameworkFactory.builder()
-                .connectString("192.168.44.160:2181")
+                .connectString("192.168.71.128:2181")
                 .sessionTimeoutMs(3000)
                 .connectionTimeoutMs(5000)
                 .retryPolicy(retryPolicy)

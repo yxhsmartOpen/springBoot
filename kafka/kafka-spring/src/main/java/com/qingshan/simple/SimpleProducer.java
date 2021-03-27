@@ -3,6 +3,7 @@ package com.qingshan.simple;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+
 import java.util.Properties;
 
 /**
@@ -11,8 +12,8 @@ import java.util.Properties;
 public class  SimpleProducer {
     public static void main(String[] args) {
         Properties pros=new Properties();
-        pros.put("bootstrap.servers","192.168.71.128:9093,192.168.71.128:9094,192.168.71.128:9095:9095");
-        //pros.put("bootstrap.servers","192.168.44.160:9092");
+        pros.put("bootstrap.servers","192.168.71.128:9093,192.168.71.128:9094,192.168.71.128:9095");
+        //pros.put("bootstrap.servers","192.168.71.128:9092");
         pros.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         pros.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
         // 0 发出去就确认 | 1 leader 落盘就确认| all(-1) 所有Follower同步完才确认

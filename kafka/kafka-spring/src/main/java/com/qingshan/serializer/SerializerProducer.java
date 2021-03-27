@@ -12,8 +12,8 @@ import java.util.Properties;
 public class SerializerProducer {
     public static void main(String[] args) {
         Properties props=new Properties();
-        //pros.put("bootstrap.servers","192.168.44.161:9093,192.168.44.161:9094,192.168.44.161:9095");
-        props.put("bootstrap.servers","192.168.44.161:9092");
+        props.put("bootstrap.servers","192.168.71.128:9093,192.168.71.128:9094,192.168.71.128:9095");
+        //props.put("bootstrap.servers","192.168.71.128:9092");
         props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer","com.qingshan.serializer.ProtobufSerializer");
         // 0 发出去就确认 | 1 leader 落盘就确认| all 所有Follower同步完才确认

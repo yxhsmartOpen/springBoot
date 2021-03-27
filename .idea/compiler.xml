@@ -12,6 +12,7 @@
         <module name="netty-hand-writing-tomcat" />
         <module name="Socket-Demo" />
         <module name="springboot-reactive-mongo" />
+        <module name="nginx-use-app" />
         <module name="springboot-performance-aspect" />
         <module name="springmongo" />
         <module name="xxl-job-executor" />
@@ -21,12 +22,13 @@
         <module name="xxl-job-admin" />
         <module name="springboot-redis-lock" />
         <module name="mybatis-druid-multi-datasource" />
+        <module name="netty-hand-writing-rpc" />
+        <module name="nginx" />
         <module name="spring-quartz" />
         <module name="springBootMongoDB" />
         <module name="reddion-spring-boot-stater" />
         <module name="kafka-springboot" />
         <module name="kafka-spring" />
-        <module name="springmongodb" />
         <module name="redisson-spring-boot-stater" />
         <module name="springboot-quartz" />
         <module name="springBootMongoDBRepository" />
@@ -41,7 +43,10 @@
       <module name="mongo" target="1.8" />
       <module name="mybatis-druid-multi-datasource" target="1.8" />
       <module name="netty" target="1.7" />
+      <module name="netty-hand-writing-rpc" target="1.5" />
       <module name="netty-hand-writing-tomcat" target="1.8" />
+      <module name="nginx" target="8" />
+      <module name="nginx-use-app" target="1.8" />
       <module name="quartz-standalone" target="1.5" />
       <module name="redis" target="8" />
       <module name="redisson-spring-boot-stater" target="1.8" />
@@ -59,7 +64,6 @@
       <module name="springBootMongoDB" target="1.8" />
       <module name="springBootMongoDBRepository" target="1.8" />
       <module name="springmongo" target="1.7" />
-      <module name="springmongodb" target="1.7" />
       <module name="unzipandunzrar" target="1.8" />
       <module name="weather-data-collect" target="1.8" />
       <module name="xxl-job-admin" target="1.8" />
@@ -75,6 +79,8 @@
       <module name="mongo" options="-parameters" />
       <module name="mybatis-druid-multi-datasource" options="-parameters" />
       <module name="netty" options="" />
+      <module name="nginx" options="-parameters" />
+      <module name="nginx-use-app" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="redisson-spring-boot-stater" options="" />
       <module name="springBoot-MyBatis-Druid-MySQL" options="-parameters" />

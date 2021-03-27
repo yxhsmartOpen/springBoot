@@ -15,8 +15,8 @@ import java.util.Properties;
 public class TransactionConsumer {
     public static void main(String[] args) {
         Properties props= new Properties();
-        //props.put("bootstrap.servers","192.168.44.161:9093,192.168.44.161:9094,192.168.44.161:9095");
-        props.put("bootstrap.servers","192.168.44.160:9092");
+        props.put("bootstrap.servers","192.168.71.128:9093,192.168.71.128:9094,192.168.71.128:9095");
+        //props.put("bootstrap.servers","192.168.71.128:9092");
         props.put("group.id","gp-test-group1");
         // 是否自动提交偏移量，只有commit之后才更新消费组的 offset
         props.put("enable.auto.commit","true");
