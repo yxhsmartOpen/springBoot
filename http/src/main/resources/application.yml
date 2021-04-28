@@ -1,0 +1,6 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /
+#5G消息登录密钥
+5G_SECRET_KEY: MjAxOTA0MTkxNjMwMjcyNTI=

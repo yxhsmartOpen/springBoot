@@ -29,6 +29,7 @@
         <module name="reddion-spring-boot-stater" />
         <module name="kafka-springboot" />
         <module name="kafka-spring" />
+        <module name="http" />
         <module name="redisson-spring-boot-stater" />
         <module name="springboot-quartz" />
         <module name="springBootMongoDBRepository" />
@@ -37,6 +38,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="http" target="8" />
       <module name="kafka" target="1.8" />
       <module name="kafka-spring" target="8" />
       <module name="kafka-springboot" target="1.8" />
@@ -73,6 +75,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Socket-Demo" options="-parameters" />
+      <module name="http" options="-parameters" />
       <module name="kafka" options="-parameters" />
       <module name="kafka-spring" options="" />
       <module name="kafka-springboot" options="-parameters" />

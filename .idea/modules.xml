@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" filepath="$PROJECT_DIR$/Socket-Demo/Socket-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka-spring/kafka-spring.iml" filepath="$PROJECT_DIR$/kafka/kafka-spring/kafka-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" filepath="$PROJECT_DIR$/kafka/kafka-springboot/kafka-springboot.iml" />
