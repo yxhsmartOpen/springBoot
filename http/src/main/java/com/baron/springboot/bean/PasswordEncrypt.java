@@ -2,14 +2,7 @@ package com.baron.springboot.bean;
 
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 33E9密码加密规则工具类
- * @Description 
- * @Project: NOP
- * @Date:2016-5-5
- * @Author wwei
- * @Copyright (c) 2016, 33e9 All Rights Reserved.
- */
+
 @Slf4j
 public class PasswordEncrypt {
 
@@ -29,14 +22,7 @@ public class PasswordEncrypt {
     public PasswordEncrypt(){
     }
     
-    /**
-     * 
-     * 根据密钥加密用户的密码信息
-     * @param pass 用户设置的密码
-     * @return
-     * @Date:2016-5-5
-     * @Author wwei
-     */
+
 //    public String  encryptPass(String pass){
 //        String ePass ="";
 //        if(pass==null || pass.length()==0){
@@ -50,13 +36,7 @@ public class PasswordEncrypt {
 //        return ePass;
 //    }
     
-    /**
-     * 把Md5的密钥进行再加密
-     * @param pass  已经进行Md5加密的密钥
-     * @return
-     * @Date:2016-5-14
-     * @author ruijia.lan
-     */
+
 //    public String encryptPassNoMd5(String pass)
 //    {
 //        String ePass = "";
@@ -71,15 +51,7 @@ public class PasswordEncrypt {
 //        return ePass;
 //    }
     
-    /**
-     * 
-     * 检测用户的密码
-     * @param pass   新输入的密码
-     * @param ePass  旧的已加密的密码字符串
-     * @return
-     * @Date:2016-5-5
-     * @Author wwei
-     */
+
 //    public boolean  checkEncryptPass(String pass,String ePass){
 //       String newPass =  encryptPass(pass);
 //       if(newPass.equalsIgnoreCase(ePass)){
