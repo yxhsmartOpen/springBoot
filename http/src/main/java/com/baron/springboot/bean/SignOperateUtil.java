@@ -67,7 +67,7 @@ public class SignOperateUtil {
      * 使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串
      *
      * @param treeMap 生成签名的参数集合
-     * @return
+     * @return String
      */
     private static String mapToStr(TreeMap<String, Object> treeMap, String secretKey) {
         treeMap.remove("sign");
