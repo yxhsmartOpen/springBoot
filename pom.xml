@@ -34,6 +34,7 @@
         <module>netty</module>
         <module>nginx</module>
         <module>http</module>
+        <module>common</module>
     </modules>
 
     <properties>

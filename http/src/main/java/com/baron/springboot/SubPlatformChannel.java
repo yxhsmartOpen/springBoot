@@ -29,6 +29,16 @@ public class SubPlatformChannel {
     private String isPrepChannel;
     /**1新增，2更新*/
     private String opType;
+    /** 供应商 */
+    private String supplierName;
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
 
     public String getOpType() {
         return opType;

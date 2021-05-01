@@ -3,6 +3,7 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/Socket-Demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Socket-Demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/http/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka/kafka-spring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka/kafka-springboot/src/main/java" charset="UTF-8" />

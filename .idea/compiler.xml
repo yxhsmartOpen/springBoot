@@ -17,6 +17,7 @@
         <module name="springmongo" />
         <module name="xxl-job-executor" />
         <module name="springboot-api" />
+        <module name="common" />
         <module name="springboot-reactive-redis" />
         <module name="springBoot-MyBatis-Druid-MySQL" />
         <module name="xxl-job-admin" />
@@ -38,6 +39,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
       <module name="http" target="8" />
       <module name="kafka" target="1.8" />
       <module name="kafka-spring" target="8" />
@@ -75,6 +77,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Socket-Demo" options="-parameters" />
+      <module name="common" options="-parameters" />
       <module name="http" options="-parameters" />
       <module name="kafka" options="-parameters" />
       <module name="kafka-spring" options="" />

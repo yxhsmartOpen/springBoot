@@ -19,7 +19,6 @@ public class CmupApiUtils {
      * @Description: 用于签名生成
      * @author: dmf
      * @param str
-     * @return
      * @throws NoSuchAlgorithmException
      * @return: String
      */
@@ -37,7 +36,6 @@ public class CmupApiUtils {
      * @author: dmf
      * @param tokenId
      * @param timestamp
-     * @return
      * @return: String
      */
     public static String sign(String tokenId, String timestamp) {

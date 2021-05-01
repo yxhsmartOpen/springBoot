@@ -59,9 +59,9 @@ public class Test {
 
 
             List<SubPlatformChannel> list = new ArrayList<>();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 3; i++) {
                 SubPlatformChannel channel = new SubPlatformChannel();
-                String service= "移动",onlinePlatform="移动" + i + "子平台",channelName ="fds" + i + "fsd" ;
+                String service= "移动",onlinePlatform="移动" + i + "子平台",channelName ="fds" + i + "fsd" ,supplierName = "CMPP3.0协议4544";
                 if (!StringUtils.isEmpty(service)){
                     service = URLEncoder.encode(service,"UTF-8");
                 }
@@ -70,6 +70,9 @@ public class Test {
                 }
                 if (!StringUtils.isEmpty(channelName)){
                     channelName = URLEncoder.encode(channelName,"UTF-8");
+                }
+                if (!StringUtils.isEmpty(supplierName)){
+                    supplierName = URLEncoder.encode(supplierName,"UTF-8");
                 }
                 channel.setChannelCode("asd" + i);
                 channel.setChannelStatus("0");
@@ -82,6 +85,7 @@ public class Test {
                 channel.setExpandLength("12");
                 channel.setIsPrepChannel("hahhah");
                 channel.setOpType("1");
+                channel.setSupplierName(supplierName);
                 list.add(channel);
             }
 
@@ -130,9 +134,9 @@ public class Test {
             channel.setChannelStatus("1");
             channel.setChannelUserId("zxc" + i);
             channel.setService("移动");
-            channel.setOnlinePlatform("移动" + i + "子平台");
+            channel.setOnlinePlatform("移动1子平台");
             channel.setChannelName("fds" + i + "fsd");
-            channel.setChannelUserId("abcd" + i);
+            channel.setOnlinePlatformCode("lt1");
             channel.setExpandLength("12");
             channel.setIsPrepChannel("hahhah");
 

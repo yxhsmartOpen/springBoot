@@ -161,4 +161,10 @@ public class HttpDemo {
         }
         return signPd;
     }
+
+    @RequestMapping(value = "/test" )
+    public void test(HttpServletRequest request ){
+        System.out.println(request.getMethod());
+        System.out.println("请求成功。。。。。。。。。。。。。。。。。。。。。");
+    }
 }
