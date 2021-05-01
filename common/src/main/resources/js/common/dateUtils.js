@@ -35,10 +35,8 @@ const DateUtils = {
         let lastMonth = year + '-' + month + '-' + '01';
         lastMonth = lastMonth.replaceAll("-", "");
         let date1 = priceEffectiveDateVal.replaceAll("-", "");
-        if (Number(date1) < Number(lastMonth)) {
-            return true;
-        }
-        return false;
+        return Number(date1) < Number(lastMonth);
+
     },
     /**
      * 获取当前月第一天日期字符串
@@ -63,7 +61,7 @@ const DateUtils = {
         return year + '-' + month + '-' + '01';
     },
     /**
-     * 全选、反选
+     * 单选框：全选、反选
      * 注意：一般来说，我们都是点击题头的复选框，列表的复选框全选或者全不选。所以人为地规定题头复选框的name值和列表复选框的属性值，差别一个id。
      * @param obj 当前对象
      * @param name 点击复选框的name属性值

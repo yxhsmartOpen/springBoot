@@ -35,6 +35,13 @@ public class DateTest {
         DateUtils.format(new Date(),"yyyy-MM-dd HH:mm");
         DateUtils.format(new Date(),"yyyy-MM-dd HH:mm:ss");
         DateUtils.format(new Date(),"yyyy-MM-dd HH:mm:ss SSS");
+
+        DateUtils.getSkipDate(new Date(),new Date());
+        DateUtils.dateStrAdd("SECOND",1);
+        DateUtils.parse("yyyyMMdd","20200405");
+        DateUtils.skipHourTime(new Date(),1);
+        DateUtils.skipDateTime(new Date(),1);
+        DateUtils.getMonthDates(new Date());
     }
 
     @Test

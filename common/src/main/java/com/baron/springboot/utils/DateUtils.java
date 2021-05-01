@@ -179,16 +179,16 @@ public class DateUtils {
     /**
      * 跳动日期
      *
-     * @param d  Date
+     * @param date  Date
      * @param skipDay 可为负数
      * @return 返回日期
      */
-    public static Date skipDateTime(Date d, int skipDay) {
-        if (d == null) {
+    public static Date skipDateTime(Date date, int skipDay) {
+        if (date == null) {
             return null;
         }
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(d);
+        calendar.setTime(date);
         calendar.add(Calendar.DATE, skipDay);
         return calendar.getTime();
     }
@@ -196,16 +196,16 @@ public class DateUtils {
     /**
      * 跳动小时
      *
-     * @param d  Date
+     * @param date  Date
      * @param skipHour 可为负数
      * @return 返回日期
      */
-    public static Date skipHourTime(Date d, int skipHour) {
-        if (d == null) {
+    public static Date skipHourTime(Date date, int skipHour) {
+        if (date == null) {
             return null;
         }
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(d);
+        calendar.setTime(date);
         calendar.add(Calendar.HOUR_OF_DAY, skipHour);
         return calendar.getTime();
     }
@@ -308,5 +308,6 @@ public class DateUtils {
         }
         return  skipDate;
     }
+
 
 }
