@@ -46,21 +46,21 @@ public class DateTest {
 
     @Test
     public void testJava8Date(){
-        log.info(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年")));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒 SSS毫秒"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-        LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        log.info(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss SSS")));
+        log.info(DateUtils.patternLocalDateTime("yyyy年"));
+        DateUtils.patternLocalDateTime("yyyy年MM月");
+        DateUtils.patternLocalDateTime("yyyy年MM月dd日");
+        DateUtils.patternLocalDateTime("yyyy年MM月dd日 HH时");
+        DateUtils.patternLocalDateTime("yyyy年MM月dd日 HH时mm分");
+        DateUtils.patternLocalDateTime("yyyy年MM月dd日 HH时mm分ss秒");
+        DateUtils.patternLocalDateTime("yyyy年MM月dd日 HH时mm分ss秒 SSS毫秒");
+        DateUtils.patternLocalDateTime("yyyyMMdd");
+        DateUtils.patternLocalDateTime("yyyy");
+        DateUtils.patternLocalDateTime("yyyy-MM");
+        DateUtils.patternLocalDateTime("yyyy-MM-dd");
+        DateUtils.patternLocalDateTime("yyyy-MM-dd HH");
+        DateUtils.patternLocalDateTime("yyyy-MM-dd HH:mm");
+        DateUtils.patternLocalDateTime("yyyy-MM-dd HH:mm:ss");
+        log.info(DateUtils.patternLocalDateTime("yyyy-MM-dd HH:mm:ss SSS"));
 
         log.info(LocalDateTime.now().plusYears(1).format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒")));
         LocalDateTime.now().plusMonths(1).format(DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒"));

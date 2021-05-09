@@ -309,5 +309,13 @@ public class DateUtils {
         return  skipDate;
     }
 
+    /**
+     * java 当前日期格式字符串
+     * @param pattern 格式
+     * @return String 格式化后的时间字符串
+     */
+    public static String patternLocalDateTime(String pattern){
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern(pattern));
+    }
 
 }
